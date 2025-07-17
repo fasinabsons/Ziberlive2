@@ -1,0 +1,193 @@
+# Bitchat Flutter Development Tasks we don't need entire tasks we want this to be updated and customized for ziberlive
+
+## Phase 1: Project Setup & Foundation
+
+### Task 1.1: Project Initialization
+- [ ] Create new Flutter project with proper package structure
+- [ ] Configure `pubspec.yaml` with required dependencies:
+  - `flutter_bluetooth_serial` or `flutter_blue_plus` for Bluetooth
+  - `cryptography` for encryption
+  - `sqflite` for local database
+  - `provider` or `riverpod` for state management
+  - `permission_handler` for runtime permissions
+- [ ] Set up proper folder structure (`lib/models`, `lib/services`, `lib/widgets`, `lib/screens`)
+- [ ] Configure Android permissions in `android/app/src/main/AndroidManifest.xml`
+- [ ] Configure iOS permissions in `ios/Runner/Info.plist`
+
+### Task 1.2: Core Data Models
+- [ ] Create `Message` model class with encryption metadata
+- [ ] Create `User` model for temporary user identities
+- [ ] Create `Channel` model for chat rooms
+- [ ] Create `Device` model for connected peers
+- [ ] Create `NetworkRoute` model for message routing
+- [ ] Set up JSON serialization/deserialization for all models
+
+## Phase 2: Bluetooth Infrastructure
+
+### Task 2.1: Bluetooth Service Foundation
+- [ ] Create `BluetoothService` singleton class
+- [ ] Implement Bluetooth adapter state monitoring
+- [ ] Handle runtime permission requests for Bluetooth
+- [ ] Create device discovery mechanism
+- [ ] Implement connection state management
+- [ ] Set up error handling for Bluetooth operations
+
+### Task 2.2: Peer Discovery & Connection
+- [ ] Implement continuous device scanning
+- [ ] Create peer connection establishment logic
+- [ ] Handle connection authentication/handshake
+- [ ] Maintain list of connected peers
+- [ ] Implement connection retry logic
+- [ ] Handle graceful disconnection
+
+### Task 2.3: Mesh Network Logic
+- [ ] Create `MeshNetwork` class for topology management
+- [ ] Implement routing table maintenance
+- [ ] Create message forwarding algorithm
+- [ ] Handle network topology changes
+- [ ] Implement loop prevention in message routing
+- [ ] Create network health monitoring
+
+## Phase 3: Messaging System
+
+### Task 3.1: Message Encryption
+- [ ] Implement end-to-end encryption using AES-256
+- [ ] Create key exchange mechanism for new connections
+- [ ] Handle key rotation for security
+- [ ] Implement message signing for authenticity
+- [ ] Create secure random number generation
+- [ ] Handle encryption/decryption errors
+
+### Task 3.2: Message Routing
+- [ ] Create `MessageRouter` class
+- [ ] Implement message queuing system
+- [ ] Handle message delivery confirmation
+- [ ] Create message TTL (time-to-live) mechanism
+- [ ] Implement duplicate message detection
+- [ ] Handle offline message storage
+
+### Task 3.3: Local Storage
+- [ ] Set up SQLite database schema
+- [ ] Create `DatabaseService` for message persistence
+- [ ] Implement message expiration/cleanup
+- [ ] Create channel and user data persistence
+- [ ] Handle database migrations
+- [ ] Implement secure data deletion
+
+## Phase 4: User Interface
+
+### Task 4.1: Authentication & Setup
+- [ ] Create welcome/onboarding screen
+- [ ] Implement temporary username creation
+- [ ] Create device pairing interface
+- [ ] Handle Bluetooth permission requests UI
+- [ ] Create network status indicators
+- [ ] Implement offline mode indicators
+
+### Task 4.2: Channel Management
+- [ ] Create channel list screen
+- [ ] Implement channel creation dialog
+- [ ] Add password protection for channels
+- [ ] Create channel discovery mechanism
+- [ ] Handle channel joining/leaving
+- [ ] Implement channel moderation features
+
+### Task 4.3: Chat Interface
+- [ ] Create chat screen with message bubbles
+- [ ] Implement real-time message updates
+- [ ] Add typing indicators
+- [ ] Create message delivery status indicators
+- [ ] Handle message reactions/emoji
+- [ ] Implement message search functionality
+
+### Task 4.4: IRC-Style Commands
+- [ ] Create command parser for IRC-style inputs
+- [ ] Implement `/join <channel>` command
+- [ ] Add `/leave` command
+- [ ] Create `/msg <user> <message>` for private messages
+- [ ] Implement `/list` for channel listing
+- [ ] Add `/nick <nickname>` for name changes
+
+## Phase 5: Advanced Features
+
+### Task 5.1: Network Optimization
+- [ ] Implement connection quality monitoring
+- [ ] Create adaptive routing based on connection strength
+- [ ] Handle network congestion
+- [ ] Optimize message batching
+- [ ] Implement network analytics
+- [ ] Create connection pooling
+
+### Task 5.2: Security Enhancements
+- [ ] Implement forward secrecy
+- [ ] Create device fingerprinting
+- [ ] Handle man-in-the-middle attack prevention
+- [ ] Implement message integrity checks
+- [ ] Create security audit logging
+- [ ] Handle compromised device detection
+
+### Task 5.3: User Experience
+- [ ] Create network topology visualization
+- [ ] Implement dark/light theme support
+- [ ] Add accessibility features
+- [ ] Create notification system
+- [ ] Handle background app operation
+- [ ] Implement battery optimization
+
+## Phase 6: Testing & Deployment
+
+### Task 6.1: Testing Strategy
+- [ ] Create unit tests for all service classes
+- [ ] Implement widget tests for UI components
+- [ ] Create integration tests for Bluetooth operations
+- [ ] Test mesh network functionality with multiple devices
+- [ ] Perform security testing
+- [ ] Create automated test scenarios
+
+### Task 6.2: Performance Optimization
+- [ ] Profile app performance
+- [ ] Optimize battery usage
+- [ ] Reduce memory footprint
+- [ ] Optimize Bluetooth operations
+- [ ] Handle large message volumes
+- [ ] Create performance monitoring
+
+### Task 6.3: Platform-Specific Features
+- [ ] Handle Android background limitations
+- [ ] Implement iOS background processing
+- [ ] Create Android foreground service
+- [ ] Handle platform-specific Bluetooth APIs
+- [ ] Optimize for different screen sizes
+- [ ] Handle platform permissions differences
+
+## Key Technical Considerations
+
+### Bluetooth Implementation
+- Use `flutter_blue_plus` for cross-platform Bluetooth Low Energy
+- Implement custom protocol over GATT characteristics
+- Handle connection state changes gracefully
+- Consider using Bluetooth Classic for higher throughput
+
+### Message Routing Algorithm
+- Implement flooding with TTL for message propagation
+- Use gossip protocol for network topology updates
+- Consider implementing AODV (Ad-hoc On-Demand Distance Vector) routing
+- Handle network partitions and reconnections
+
+### Security Implementation
+- Use Signal Protocol for end-to-end encryption
+- Implement Perfect Forward Secrecy
+- Use ephemeral keys for each session
+- Handle key exchange securely over Bluetooth
+
+### State Management
+- Use Provider or Riverpod for global state
+- Implement proper state persistence
+- Handle app lifecycle states
+- Manage network state across app restarts
+
+### Error Handling
+- Implement comprehensive error handling for Bluetooth operations
+- Handle network failures gracefully
+- Provide user-friendly error messages
+- Implement automatic retry mechanisms

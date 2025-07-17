@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Autonomous Task Executor",
+  "description": "Automatically executes tasks when files are modified, handling retries, test management, and file organization without requiring user confirmation or intervention",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "lib/**/*.dart",
+      "pubspec.yaml",
+      "mydocs/*.txt"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Execute the assigned task immediately without delay or confirmation. If you encounter high traffic messages, model load warnings, or network errors, automatically retry without stopping or asking for user input. Handle test files appropriately: if tests pass, organize files and delete test files safely; if tests fail, edit existing test files instead of creating new ones. Never remove existing working functionality. Work within the current project context, preserve original file purpose and structure, and optimize only where safe. Use exponential backoff for retries and complete tasks autonomously even under degraded system conditions."
+  }
+}

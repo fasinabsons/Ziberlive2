@@ -1,0 +1,1114 @@
+Below is a detailed feature list for the co-living app, specifically focusing on the Admin roles: Owner-Admin and Roommate-Admin. The features are tailored to your requirements, including customization options, premium subscription-based features (e.g., adding user photos and documents), and the ability to manage a building with multiple apartments. I’ve incorporated your previous ideas, such as flexible subscriptions, Communal Kitchen (replacing "Food Mess"), and investment-focused features, while adding my own suggestions to enhance functionality, user engagement, and revenue potential. The list ensures the app remains unique, scalable, and aligned with your goal of generating income through a subscription model.
+
+Admin Role Definitions
+Owner-Admin:
+Owns the property (e.g., a building with 8+ apartments) and does not share bills with users.
+Pays for employee services (e.g., cooks) and manages the entire building to minimize vacancies.
+Likely to pay for premium features (e.g., user photos, analytics) for tenant verification and property management.
+Focuses on building-wide oversight, financial reports, and scalability.
+Roommate-Admin:
+A resident who lives in the apartment, shares bills equally with other users, and has administrative privileges.
+Less likely to pay for premium features like user photos, as roommates already know each other.
+Focuses on managing a single apartment, coordinating tasks, and fostering community collaboration.
+
+Detailed Feature List for Admins
+The features are categorized by role, with shared features listed separately to avoid redundancy. Each feature is detailed to reflect its purpose, functionality, and relevance to the role. My suggestions are integrated as improvements to enhance the app’s value, engagement, and monetization potential.
+Owner-Admin Features
+User Management:
+Add, edit, or remove users (residents or Communal Kitchen-only users) across all apartments.
+Assign roles: User, Roommate-Admin, or Owner-Admin.
+Set user subscriptions: Communal Kitchen (specific meals: breakfast, lunch, dinner), drinking water, room rent, utilities (electricity, internet, utility water).
+Approve or reject user opt-out requests (e.g., cancel drinking water).
+Bulk import users via CSV for multi-apartment buildings (e.g., 50+ tenants).
+Bed and Apartment Management:
+Add, edit, or delete apartments, rooms, and beds (e.g., Apt 1 > Room 101 > Bed 1).
+View building-wide vacancy dashboard: green for vacant, red for occupied, with filters (e.g., “Show vacant beds only”).
+Generate vacancy reports (e.g., “Apt 3: 2/5 beds vacant”) exportable as PDF or CSV.
+Set room rent prices per apartment or room for dynamic pricing.
+Expense Management:
+Input total bills: room rent, electricity, internet, utility water, drinking water, Communal Kitchen.
+Configure bill distribution: Bills split equally among users (excluding Owner-Admin).
+Add employee costs (e.g., cook salary: $200/month) excluded from user splits.
+Track payment status: green for paid, red for unpaid, with user-specific details (e.g., “User A: Rent unpaid”).
+Generate financial reports: total rent collected, utility costs, employee expenses.
+Communal Kitchen Management:
+Set daily or weekly menu for each apartment, editable in real-time.
+Enable or disable chef system per apartment:
+With Chef: Post chef details (name, experience, qualifications) for user voting; manage recruitment or demotion based on votes.
+Without Chef: Assign cooking tasks to users on a rotating schedule.
+Approve or reject menu change suggestions from user votes.
+Set meal schedules (e.g., “Dinner at 7 PM”) with automated user notifications.
+Configure Communal Kitchen access for non-residents (e.g., external users subscribing only to meals).
+Task and Rule Management:
+Set cleaning and cooking (if no chef) rotation schedules for each apartment.
+Define house rules (e.g., “No guests after 10 PM”) via polls or direct settings, customizable per apartment.
+Monitor task completion and allocate Co-Living Credits to users.
+Assign tasks to employees (e.g., cleaners) and track their performance.
+Voting System:
+Create polls for each apartment or building-wide (e.g., “Should we buy a new fridge for Apt 2?”).
+Configure anonymous or named voting options.
+View detailed vote results and participation analytics (e.g., “80% participation in Apt 1”).
+Export poll data for record-keeping.
+Analytics Dashboard:
+Building-wide insights: menu popularity, vacancy trends, payment compliance, team spending.
+Predictive alerts: “Electricity bill may exceed $100 in Apt 3.”
+Financial analytics: rent collection rate, utility cost trends, employee cost breakdown.
+Vacancy forecasting: “Apt 4 likely to have 3 vacant beds next month.”
+Networking Configuration:
+Connect to multiple Wi-Fi networks (e.g., one per apartment in an 8-apartment building) via SSID input.
+Manage P2P data sync for 10-50+ devices, ensuring offline devices retrieve data from others.
+Configure network priorities (e.g., “Use Apt 1 Wi-Fi for primary sync”).
+Investment Group Management:
+Create or monitor investment groups for users aiming to offset rent with passive income.
+Suggest low-risk investments (e.g., mutual funds, dividend stocks) based on market data.
+Track group performance: contributions, returns, and rent coverage (e.g., “Apt 1 group: 40% rent covered”).
+Approve user-proposed investments (e.g., “Bulk grocery purchase for $50”).
+Employee Management:
+Add employee details (e.g., cook, cleaner) with roles, salaries, and schedules.
+Track employee expenses separately from user bills.
+Post employee profiles for transparency (e.g., “Cook: 5 years experience”).
+Premium Features (Subscription-Based, Revenue Source):
+Add user photos and details (e.g., ID, contact, emergency contact) for $5/month per apartment, ideal for tenant verification in multi-apartment buildings.
+Upload documents (e.g., lease agreements, chef contracts, utility bills) for $5/month per building.
+Access advanced analytics (e.g., vacancy forecasting, investment ROI) for $10/month per building.
+Generate branded vacancy listings (e.g., “Apt 1, Room 101: $400/month”) for $2/month.
+Building-Wide Oversight:
+Unified dashboard for all apartments: vacancies, expenses, analytics, and user activity.
+Optimize vacancy with tools: suggest rent reductions or promotions (e.g., “Lower Apt 2 rent by 10% to fill beds”).
+Compare apartment performance (e.g., “Apt 3: 90% occupancy vs. Apt 4: 60%”).
+Notifications:
+Alerts for unpaid bills, task incompletion, new votes, vacancy changes, or investment updates.
+Building-wide payment alerts: “3 users in Apt 2 unpaid.”
+Customize notification preferences (e.g., disable non-critical alerts).
+Chat/Forum Moderation:
+Moderate apartment-specific or building-wide chats for task coordination or investment discussions.
+Create announcements (e.g., “New menu for Apt 1 tomorrow”).
+Pin important messages (e.g., “Rent due tomorrow”).
+Roommate-Admin Features
+User Management:
+Add, edit, or remove users within a single apartment (residents or Communal Kitchen-only).
+Assign roles: User or Roommate-Admin (cannot assign Owner-Admin).
+Set user subscriptions: Communal Kitchen, drinking water, room rent, utilities.
+Approve or reject opt-out requests.
+Bed and Apartment Management:
+Add, edit, or delete rooms and beds within one apartment (e.g., Room 101 > Bed 1).
+View apartment-specific vacancy dashboard (green for vacant, red for occupied).
+Generate vacancy reports for the apartment, exportable as PDF.
+Expense Management:
+Input apartment bills: room rent, electricity, internet, utility water, drinking water, Communal Kitchen.
+Configure bill distribution: Split equally among all users, including Roommate-Admin.
+Track payment status: green for paid, red for unpaid, with user details.
+View personal bill share and payment status (as a user).
+Communal Kitchen Management:
+Set a daily or weekly menu for the apartment.
+Enable or disable chef system:
+With Chef: Post chef details for voting; manage recruitment or demotion.
+Without Chef: Assign cooking tasks to users.
+Approve or reject menu change suggestions.
+Set meal schedules with user notifications.
+Allow non-residents to subscribe to Communal Kitchen.
+Task and Rule Management:
+Set cleaning and cooking (if no chef) rotation schedules for the apartment.
+Define apartment-specific rules via polls or direct settings.
+Monitor task completion and allocate Co-Living Credits.
+Voting System:
+Create apartment-specific polls (e.g., “New couch for living room?”).
+Configure anonymous or named voting.
+View vote results and participation analytics.
+Analytics Dashboard:
+Apartment-specific insights: menu popularity, payment compliance, team spending.
+Predictive alerts: “Communal Kitchen costs rising.”
+Basic vacancy trends (e.g., “2/5 beds vacant”).
+Networking Configuration:
+Connect to the apartment’s Wi-Fi network via SSID input.
+Manage P2P data sync for 10-50 devices within the apartment.
+Investment Group Management:
+Create or monitor investment groups for the apartment’s users.
+Suggest investments (e.g., bulk groceries, small funds).
+Track group performance and rent coverage.
+Approve user-proposed investments.
+Premium Features (Subscription-Based, Revenue Source):
+Add user photos and details for $1/month per apartment (less relevant, as roommates know each other).
+Upload documents (e.g., utility bills) for $1/month.
+Access basic analytics for free; advanced analytics for $2/month.
+Notifications:
+Alerts for unpaid bills, task incompletion, votes, or investment updates.
+Personal payment alerts as a user (e.g., “Your rent is due”).
+Customize notification preferences.
+Chat/Forum Moderation:
+Moderate apartment-specific chats.
+Create announcements (e.g., “Cleaning schedule updated”).
+Pin messages.
+Shared Admin Features (Owner-Admin and Roommate-Admin)
+Offline Mode:
+Manage users, expenses, tasks, or polls offline, syncing via P2P when Wi-Fi is available.
+Data Security:
+Encrypt sensitive data (votes, payments, user details) for UAE PDPL compliance.
+Use P2P backup (e.g., IPFS or nearby_connections) for data redundancy.
+Gamification Support:
+Allocate Co-Living Credits to users for tasks, payments, or investments.
+Monitor Community Tree growth for the apartment or building, reflecting contributions.
+Award credits to self (Roommate-Admin only) for admin tasks.
+Multi-Language Support:
+Manage app in English, Arabic, or Hindi.
+Onboarding Tutorials:
+Role-specific guides: user management, bed tracking, Communal Kitchen setup.
+
+Grok’s Suggested Improvements
+Custom Subscription Templates:
+Create reusable subscription plans (e.g., “Communal Kitchen + Rent,” “All Services”) for quick user assignment, saving time for both admin types.
+Example: Owner-Admin assigns “Full Package” to 20 users in one click.
+Smart Rule Suggestions:
+AI-driven rule suggestions based on user feedback or analytics (e.g., “Add noise curfew if complaints increase”).
+Helps Roommate-Admins maintain harmony; Owner-Admins ensure tenant satisfaction.
+Automated Payment Chasing:
+Escalate notifications for unpaid bills (e.g., daily reminders after due date).
+Highlight top payers on leaderboard to encourage compliance, visible to both admin types.
+Vacancy Marketing Tools:
+Generate shareable vacancy listings (e.g., “Apt 1, Room 101: $400/month”) with photos for $2/month (premium).
+Owner-Admins can integrate listings with social platforms (e.g., WhatsApp, Instagram).
+Roommate-Admins can share listings within the apartment’s chat.
+Community Event Planner:
+Create events (e.g., group dinner, investment meeting) with RSVP and cost-sharing options.
+Owner-Admins host building-wide events; Roommate-Admins focus on apartment events.
+Increases engagement and community bonding.
+Integration with Local Services:
+Suggest nearby grocery stores, utility providers, or investment advisors via free APIs (e.g., Google Places).
+Owner-Admins benefit from bulk deals for multiple apartments; Roommate-Admins save on apartment costs.
+Customizable Dashboards:
+Allow admins to pin favorite analytics (e.g., vacancy rate, payment status) for quick access.
+Owner-Admins prioritize building-wide metrics; Roommate-Admins focus on apartment data.
+Tenant Feedback System:
+Collect anonymous user feedback on Communal Kitchen, rules, or amenities.
+Owner-Admins use feedback to improve tenant retention; Roommate-Admins adjust apartment rules.
+Dynamic Employee Scheduling:
+For Owner-Admins, optimize cook or cleaner schedules based on apartment needs (e.g., “Apt 1 needs cook only for dinner”).
+Reduces employee costs and improves efficiency.
+Premium Feature Tiers:
+Offer tiered subscriptions: Basic ($5/month: photos, documents), Pro ($10/month: advanced analytics, listings), Enterprise ($20/month: building-wide tools for Owner-Admins).
+Encourages Owner-Admins to pay for premium features, while Roommate-Admins opt for Basic or free tiers.
+
+Notes on Connecting Many Users
+To support a large user base (10-50+ devices, potentially hundreds in a building):
+P2P Networking: nearby_connections enables Wi-Fi-based data sharing, scaling to 50+ devices with low latency. Offline users sync data via P2P, ensuring inclusivity.
+Multiple Wi-Fi Networks: Owner-Admins configure SSIDs for all apartment networks, enabling building-wide sync. Roommate-Admins manage one network, reducing complexity.
+Firebase Scalability: Free tier supports 50K daily reads, sufficient for 50 users. P2P reduces Firebase load for larger communities, keeping costs at zero.
+Subscription Revenue: Premium features (photos, analytics) target Owner-Admins, who manage large tenant bases and value verification tools. Roommate-Admins and users rely on free features, maximizing adoption.
+
+Final Thoughts
+The feature list distinguishes Owner-Admins (building-wide oversight, employee management, premium subscriptions) from Roommate-Admins (apartment-focused, shared expenses, minimal premium use), ensuring flexibility and scalability. Owner-Admins drive revenue through premium features like user photos and analytics, appealing to property managers, while Roommate-Admins foster community collaboration. My suggestions (e.g., custom subscriptions, vacancy tools, event planner) enhance engagement, efficiency, and monetization, making the app unique and valuable for both admin types.
+
+
+
+
+
+
+
+
+
+To address your requirements, I’ll provide a detailed feature list for the co-living app, focusing on the Admin roles (Owner-Admin and Roommate-Admin) with a hybrid approach combining internet-based data sync and P2P networking for a private network. The app will support a large number of users (100-200+), with Owner-Admins managing 3+ apartments and Roommate-Admins handling 1-2 apartments, as you specified. Admins can choose whether to participate in bill splitting (payment role) via settings, and the app will offer a subscription model for premium features like backups and advanced analytics.
+I’ll describe each page from a programmer’s perspective, detailing the UI/UX, widgets, services (e.g., notifications, Firebase), and psychological design principles to make the app addictive, simple, minimal, and superior to competitors (e.g., Splitwise, Roomi). The UI/UX will be tailored for Flutter, emphasizing a clean, customizable, and engaging experience. I’ll incorporate your ideas, such as customizable bill names (e.g., “Community Cooking” instead of “Food Mess”), dynamic bill splitting, grocery scanning, and flexible apartment/room management. My suggestions will enhance functionality, scalability, and monetization to ensure the app is the “best ever made.”
+
+Key Design Principles
+Functional Psychology (Addictive):
+Reward System: Use Co-Living Credits and a Community Tree visualization to trigger dopamine release for task completion, payments, or contributions.
+Progress Tracking: Show bill payment progress, rent-free goals (via investments), and vacancy reductions to create a sense of achievement.
+Social Proof: Display leaderboards (anonymous option) and Community Cooking team performance to encourage competition and collaboration.
+FOMO (Fear of Missing Out): Send timely notifications (e.g., “Vote on menu ends in 2 hours!”) to drive engagement.
+Simplicity and Minimalism:
+Clean, card-based UI with large buttons and one-tap actions.
+Nature-inspired palette (green for growth, blue for trust) with soft gradients and symmetric layouts.
+Customizable labels (e.g., “Community Cooking”) to make the app feel personal.
+Beating Competitors:
+Unique Features: Community Cooking with grocery scanning, investment groups for passive income, building-wide vacancy optimization.
+Flexibility: Admins name bills, set apartment or room-based management, and customize subscriptions.
+Scalability: Supports 100-200+ users with hybrid P2P/internet sync, outperforming Splitwise’s single-apartment focus.
+Premium Model: Subscription-based backups, analytics, and photo uploads target Owner-Admins, unlike Roomi’s limited monetization.
+
+Admin Role Definitions
+Owner-Admin:
+Manages 3+ apartments (or 1-2 if explicitly set in settings).
+Does not share bills by default but can opt into payment role (e.g., for small properties).
+Pays for employees (e.g., cooks) and focuses on building-wide oversight, vacancy minimization, and revenue generation via premium features.
+Likely to pay for subscriptions (e.g., $10/month for backups, analytics).
+Roommate-Admin:
+Manages 1-2 apartments, lives in one, and shares bills by default.
+Can opt out of the payment role if acting as a non-sharing admin (e.g., temporary property manager).
+Focuses on apartment-level coordination, less likely to use premium features (as roommates know each other).
+Hybrid Approach:
+Admins toggle payment role in settings: “Include in bill splitting” (Roommate-Admin default) or “Exclude” (Owner-Admin default).
+Data syncs via internet (Firebase) for persistent storage and P2P (nearby_connections) for offline resilience in a private network.
+Free tier: Local backups on admin’s phone (multiple logins supported).
+Premium tier ($5-$20/month): Cloud backups, advanced analytics, photo uploads.
+
+User Types (Recap for Context)
+Users are categorized by subscriptions, with admins customizing names (e.g., “Community Cooking” as a suggested default). These are referenced in page designs:
+Full Subscribers: Community Cooking, drinking water, room rent, utilities.
+Community Cooking and Drinking Water Only (Non-Residents): Meals and water, no rent.
+Community Cooking and Room Rent (No Drinking Water): Meals, rent, utilities.
+Room Rent Only: Rent and utilities.
+Investment-Focused Roommates: Subset of residents investing for passive income.
+
+Page-by-Page Feature List and UI/UX Design
+Each page is described from a Flutter programmer’s perspective, detailing features, UI/UX, widgets, services, and psychological elements to ensure addictiveness, simplicity, and competitiveness. Pages are customizable, allowing admins to name bills, set apartment or room-based management, and handle dynamic user counts (100-200+).
+1. Home Page
+Purpose: Central hub for admins to access key functions, view quick stats, and receive actionable insights.
+Features:
+Quick Stats (Owner-Admin): Building-wide vacancy rate (e.g., “75% occupied”), total rent collected, unpaid bills (e.g., “5 users unpaid in Apt 3”), Community Cooking participation.
+Quick Stats (Roommate-Admin): Apartment vacancy (e.g., “2/5 beds vacant”), personal bill share, unpaid bills (e.g., “2 roommates unpaid”), Community Cooking menu.
+Action Cards: Tap to navigate to pages (e.g., “Manage Users,” “Bills,” “Vacancy,” “Community Cooking”).
+Notifications Banner: Alerts for unpaid bills, new votes, or task incompletion (e.g., “Vote on Apt 2 menu ends soon”).
+Community Tree: Animated visualization showing community contributions (grows with payments, tasks).
+Forecast Widget: Predicts bill trends (e.g., “Electricity up 10% this month”) for Owner-Admins; apartment-specific for Roommate-Admins.
+Premium Teaser: “Unlock cloud backups for $5/month” (free tier uses phone backups). UI/UX:
+Layout: Card-based grid with rounded corners, soft green gradients, and centered text.
+Widgets: Card, ListTile for stats, AnimatedContainer for Community Tree, Banner for notifications, ElevatedButton for actions.
+Navigation: Bottom navigation bar (Home, Users, Bills, Settings) for quick access.
+Psychology: Progress bars for vacancy and payments create a sense of control; FOMO-driven notifications encourage action; tree animation rewards engagement. Services:
+Firebase Firestore: Fetch real-time stats (vacancy, bills).
+Firebase Cloud Messaging: Push notifications for alerts.
+Nearby Connections: Offline data sync for stats.
+Local Storage (sqflite): Cache stats for offline view.
+Analytics (Firebase): Track page usage for forecasting. Customization:
+Admins rename cards (e.g., “Bills” to “Expenses”).
+Owner-Admins toggle building vs. apartment view; Roommate-Admins see only their apartment.
+
+2. Users Page
+Purpose: Manage users (residents, non-residents, or guests), assign subscriptions, and customize profiles.
+Features:
+User List (Owner-Admin): View all users across apartments (e.g., “Apt 1: 25 users, Apt 2: 30 users”). Filter by apartment, subscription, or payment status.
+User List (Roommate-Admin): View users in one apartment (e.g., “10 roommates, 5 non-residents”).
+Add/Edit User: Input name, email, role (User, Roommate-Admin), and subscriptions (Community Cooking, drinking water, rent, utilities).
+Subscription Customization: Checkbox for services; custom names (e.g., “Community Cooking” or “Shared Meals”).
+Guest Mode (Owner-Admin): Add temporary guests with fixed payment (e.g., “$500/month for room + meals”), no bill splitting.
+Photo/Details (Premium, Owner-Admin): Upload user photos, IDs, or contact details for $5/month per apartment.
+Bulk Import (Owner-Admin): Import users via CSV for 100-200+ users.
+Payment Status: Green/red indicators for paid/unpaid bills.
+Investment Groups: Assign users to investment groups for passive income (e.g., “Apt 1 Investment Club”). UI/UX:
+Layout: Scrollable list with ListTile for each user, showing name, subscriptions, and status. Expandable details (subscriptions, payment history).
+Widgets: ListView.builder, CheckboxListTile for subscriptions, CircleAvatar for photos (premium), IconButton for edit/delete, TextField for custom names.
+Search/Filter: SearchBar and DropdownButton for filtering by apartment or status.
+Psychology: Green checkmarks for paid users create positive reinforcement; premium photo teaser (“Unlock for $5/month”) drives subscriptions. Services:
+Firebase Firestore: Store user data, subscriptions.
+Firebase Storage: Premium photo/document uploads.
+Nearby Connections: Offline user data sync.
+sqflite: Local user cache.
+Firebase Auth: Multi-login support for admins. Customization:
+Admins rename subscriptions (e.g., “Community Cooking” in text box with suggestion).
+Owner-Admins toggle guest vs. resident mode; Roommate-Admins focus on residents.
+
+
+
+
+3. Bills Page
+Purpose: Input, track, and forecast bills, with dynamic splitting based on user subscriptions and admin payment role.
+Features:
+Bill Entry (Owner-Admin): Input building-wide or apartment-specific bills: rent, electricity, internet, utility water, drinking water, Community Cooking, custom bills (e.g., “Cleaning Service”).
+Bill Entry (Roommate-Admin): Input apartment-specific bills.
+Custom Bill Names: Text field with suggestions (e.g., “Community Cooking” for meal costs).
+Dynamic Splitting: Automatically split bills based on subscriptions:
+Example: Electricity = $8000, 25 users, each pays $320 (recalculated if a user leaves).
+Users not subscribed (e.g., no drinking water) excluded from relevant splits.
+Owner-Admin: Excluded from splits unless toggled in settings; Roommate-Admin: Included by default.
+Community Cooking Options:
+Fixed Amount: Constant monthly fee (e.g., $100/user); excess spending credited back as Co-Living Credits.
+Variable Amount: Bill varies monthly based on grocery team spending (e.g., $120 this month, $90 next).
+Grocery Scanning: Scan receipts via camera (OCR) to log items and costs; manual entry option for flexibility.
+Guest Billing (Owner-Admin): Fixed payment for guests (e.g., “$500/month for room + meals”), no splitting.
+Apartment-Based Billing (Owner-Admin): For families or bachelors, set fixed apartment fee (e.g., “Apt 1: $2000/month”) instead of per-user.
+Payment Status: Green/red indicators; notifications sent to users post-update (e.g., “Electricity bill: $320 due”).
+Bill Forecasting: Graph showing bill trends (e.g., “Electricity up 15% from last month”).
+Recalculation: Automatically adjust splits when users join/leave (e.g., 24 users = $333.33 each). UI/UX:
+Layout: Tabbed interface (Rent, Electricity, Community Cooking, etc.) with TabBar. Each tab has a form for bill entry and a list of user payments.
+Widgets: TextField for bill amount/name, Switch for fixed/variable Community Cooking, ImagePicker for receipt scanning, LineChart (fl_chart) for forecasting, ListTile for payment status.
+Modals: Pop-up for manual grocery entry (item, cost fields).
+Psychology: Instant feedback on bill splits (e.g., “$320 saved!”) reinforces action; forecasting graph creates control; notifications drive urgency. Services:
+Firebase Firestore: Store bill data, user subscriptions.
+Firebase Cloud Functions: Recalculate splits on user changes.
+Firebase Cloud Messaging: Notify users of bill updates.
+Nearby Connections: Offline bill sync.
+sqflite: Cache bills locally.
+OCR (Google ML Kit): Receipt scanning for grocery costs. Customization:
+Admins name bills and toggle fixed/variable options.
+Owner-Admins choose per-user or apartment-based billing; Roommate-Admins use per-user only.
+4. Vacancy Page
+Purpose: Manage beds or apartments, optimize occupancy, and generate listings.
+Features:
+Vacancy Dashboard (Owner-Admin): Building-wide view of apartments, rooms, beds (e.g., “Apt 1: 2/10 beds vacant”). Filter by apartment or status.
+Vacancy Dashboard (Roommate-Admin): Apartment-specific view (e.g., “Room 101: 1/2 beds vacant”).
+Add/Edit/Delete: Add apartments (Owner-Admin) or rooms/beds (both), with fields for name, rent price.
+Management Mode: Toggle room-based (beds/rooms) or apartment-based (e.g., “Apt 1: $2000/month” for families).
+Vacancy Optimization (Owner-Admin): Suggest rent reductions or promotions (e.g., “Lower Apt 2 rent by 10%”) based on trends.
+Listings (Premium): Generate shareable vacancy ads with photos for $2/month (e.g., “Apt 1, Room 101: $400/month”).
+Notifications: Alert for new vacancies or prolonged unoccupied beds (e.g., “Room 102 vacant for 30 days”). UI/UX:
+Layout: Tree view (ExpansionTile) for apartments > rooms > beds, with green/red vacancy indicators.
+Widgets: TextField for adding apartments/rooms, Slider for rent adjustments, ImagePicker for listing photos (premium), ElevatedButton for generating ads.
+Filters: DropdownButton for status (vacant/occupied) or apartment.
+Psychology: Progress bar for occupancy rate (e.g., “80% filled”) motivates action; suggested promotions create urgency. Services:
+Firebase Firestore: Store apartment/room data.
+Firebase Storage: Premium photo uploads.
+Nearby Connections: Offline vacancy sync.
+sqflite: Cache vacancy data.
+Analytics (Firebase): Vacancy trend analysis. Customization:
+Admins toggle room vs. apartment mode.
+Owner-Admins set custom rent prices per apartment.
+
+
+5. Community Cooking Page
+Purpose: Manage menus, chefs, cooking tasks, and grocery teams.
+Features:
+Menu Management: Set daily/weekly menu, editable in real-time (e.g., “Monday: Pizza”).
+Chef System (Optional): Enable/disable chef:
+With Chef: Post chef details (name, experience) for voting; manage recruitment/demotion.
+Without Chef: Assign cooking tasks to users on rotation.
+Grocery Teams: Assign users to weekly teams; track spending via scanned receipts or manual entry.
+Spending Options:
+Fixed: Constant fee (e.g., $100/user); excess credited as Co-Living Credits.
+Variable: Bill varies monthly (e.g., $120 this month, $90 next) based on team spending.
+Grocery Scanning: Scan receipts to log items/costs; manual entry for flexibility.
+Guest Mode (Owner-Admin): Owner pays for Community Cooking (e.g., $2000/month), no user billing.
+Notifications: Alert users of menu updates, cooking tasks, or team assignments.
+Analytics: Track menu popularity, team spending trends (e.g., “Pizza preferred by 70%”). UI/UX:
+Layout: Tabbed interface (Menu, Chef, Teams, Spending). Menu tab uses ListView for days; Teams tab shows user assignments.
+Widgets: TextField for menu items, Switch for chef enable/disable, ImagePicker for receipt scanning, LineChart for spending trends, Calendar for cooking schedules.
+Psychology: Vibrant food icons make menu engaging; credits for excess spending reward thriftiness; team leaderboard drives competition. Services:
+Firebase Firestore: Store menu, team, and spending data.
+Firebase Cloud Messaging: Notify users of updates.
+Nearby Connections: Offline sync.
+sqflite: Cache menu/tasks.
+OCR (Google ML Kit): Receipt scanning. Customization:
+Admins rename “Community Cooking” and set fixed/variable billing.
+Owner-Admins toggle guest mode; Roommate-Admins focus on user teams.
+
+
+
+
+6. Tasks Page
+Purpose: Assign and monitor cleaning, cooking, or other tasks.
+Features:
+Task Assignment (Owner-Admin): Set cleaning, cooking (if no chef), or employee tasks (e.g., cleaner) across apartments.
+Task Assignment (Roommate-Admin): Set apartment-specific tasks.
+Rotation Schedules: Weekly/monthly rotations with user or team assignments.
+Task Completion: Users mark tasks complete; admins verify and award Co-Living Credits.
+Notifications: Alert users of upcoming tasks (e.g., “Clean kitchen tomorrow”).
+Analytics: Track task completion rates (e.g., “90% tasks completed in Apt 1”). UI/UX:
+Layout: Calendar view (TableCalendar) for schedules; list view for tasks.
+Widgets: CheckboxListTile for task completion, DropdownButton for user/team assignment, BarChart for completion rates.
+Psychology: Checkmarks and credits reward completion; calendar visualization simplifies planning. Services:
+Firebase Firestore: Store tasks, schedules.
+Firebase Cloud Messaging: Task notifications.
+Nearby Connections: Offline sync.
+sqflite: Cache tasks. Customization:
+Admins name tasks (e.g., “Kitchen Duty”).
+Owner-Admins assign employee tasks.
+
+
+
+
+
+
+
+
+
+
+
+7. Voting Page
+Purpose: Create and manage polls for community decisions.
+Features:
+Poll Creation (Owner-Admin): Building-wide or apartment-specific polls (e.g., “New fridge for Apt 2?”).
+Poll Creation (Roommate-Admin): Apartment-specific polls.
+Options: Anonymous/named voting, multiple-choice or yes/no.
+Results: Real-time vote counts and participation analytics.
+Notifications: Alert users of new polls or deadlines.
+Export: Save poll results as PDF (premium, $2/month). UI/UX:
+Layout: List of active polls (ListView); form for new polls.
+Widgets: RadioListTile for poll options, ProgressBar for vote counts, TextField for poll question, ElevatedButton for export.
+Psychology: Progress bars create urgency; anonymous toggle builds trust. Services:
+Firebase Firestore: Store polls, votes.
+Firebase Cloud Messaging: Poll notifications.
+Nearby Connections: Offline voting sync.
+sqflite: Cache polls. Customization:
+Admins name polls and set deadlines.
+8. Investment Page
+Purpose: Manage user investment groups for passive income to offset rent.
+Features:
+Group Creation: Form investment groups (e.g., “Apt 1 Investment Club”) with user assignments.
+Investment Tracking: Log contributions, returns (e.g., “$100 invested, $3/month return”).
+Suggestions: Admin-curated low-risk investments (e.g., mutual funds).
+Rent-Free Progress: Track rent coverage (e.g., “50% rent covered”).
+Analytics (Premium): ROI charts, risk profiles for $2/month.
+Notifications: Alert for group updates, returns, or proposals. UI/UX:
+Layout: List of groups (ListView); dashboard for each group’s progress.
+Widgets: TextField for contributions, PieChart for rent coverage, LineChart for returns, ElevatedButton for proposals.
+Psychology: Progress toward rent-free living motivates investment; charts visualize growth. Services:
+Firebase Firestore: Store investment data.
+Firebase Cloud Messaging: Group notifications.
+Nearby Connections: Offline sync.
+sqflite: Cache investments. Customization:
+Admins name groups and suggest investments.
+9. Settings Page
+Purpose: Configure admin preferences, backups, and subscriptions.
+Features:
+Payment Role: Toggle “Include in bill splitting” (Roommate-Admin default: on; Owner-Admin default: off).
+Apartment Count: Set number of apartments (3+ for Owner-Admin, 1-2 for Roommate-Admin).
+Backup Options:
+Free: Local backup to phone (export as JSON).
+Premium ($5/month): Cloud backup to Firebase Storage.
+Network Settings: Input SSIDs for Wi-Fi networks (Owner-Admin: multiple; Roommate-Admin: one).
+Subscription Management: Enable premium features (photos, analytics, listings).
+Customization: Rename bills, services (e.g., “Community Cooking”), and app labels.
+Multi-Login: Support multiple admin accounts (Firebase Auth).
+Language: English, Arabic, Hindi. UI/UX:
+Layout: Categorized list (ListView) with toggles and buttons.
+Widgets: Switch for payment role, TextField for SSIDs/names, ElevatedButton for backups, DropdownButton for language.
+Psychology: Clear toggles empower control; premium teasers drive subscriptions. Services:
+Firebase Firestore: Store settings.
+Firebase Storage: Cloud backups.
+Firebase Auth: Multi-login.
+Nearby Connections: Offline settings sync.
+sqflite: Cache settings. Customization:
+Admins fully customize labels and roles.
+
+Final Thoughts
+This page-by-page feature list ensures the co-living app is addictive, simple, minimal, and outperforms competitors through unique features (Community Cooking with grocery scanning, investment groups, vacancy optimization) and flexible customization (bill names, apartment/room modes). The hybrid P2P/internet sync supports 100-200+ users, with Owner-Admins managing large buildings and Roommate-Admins focusing on apartments. The subscription model (photos, backups, analytics) targets Owner-Admins for revenue, while free features attract Roommate-Admins and users. The UI/UX leverages Flutter’s widgets for a clean, engaging experience, with psychological elements like rewards and progress bars ensuring user retention.
+To create the ultimate co-living app that aligns with your vision and the Success Booster Protocol, I’ll refine the app to be offline-first, leveraging Wi-Fi P2P (nearby_connections) for data sync across 100-200+ devices in a private network, with Firebase used minimally for authentication and premium cloud backups. The app will support Owner-Admins (3+ apartments, or 1-2 if set) and Roommate-Admins (1-2 apartments), with flexible user subscriptions (e.g., Community Cooking, drinking water, room rent). It will be addictive, minimal, and simple, using gamification (Co-Living Credits, Community Tree) and a nature-inspired UI (green/blue palette) to outshine competitors like Splitwise and Roomi.
+I’ll split the response into two parts as requested:
+Part 1: Free Version Features – A detailed list of features for all users (Users, Roommate-Admins, Owner-Admins) in the free tier, incorporating your ideas (e.g., offline sync, customizable bills, grocery scanning, investment groups) and the Success Booster Protocol’s suggestions (e.g., Community Tree gamification, offline-first positioning).
+Part 2: Paid Version Features and Monetization – A list of premium features, including Firebase-dependent services (to cover costs), additional paid tools, and ads to ensure profitability without financial trouble. This will include micro-monetization loops and tiered subscriptions to maximize revenue while keeping the free tier robust.
+I’ll also provide a file structure update based on your previous request, ensuring all necessary files support the free and paid features. The app will remain cost-free to start, with Firebase costs offset by premium subscriptions and ads.
+
+Part 1: Free Version Features (Detailed)
+The free tier is designed to attract a large user base (100-200+ users, including Users, Roommate-Admins, and Owner-Admins) by offering core functionality offline, ensuring accessibility and engagement. It incorporates your ideas (e.g., customizable bill names, grocery scanning, apartment/room modes) and the Success Booster Protocol’s recommendations (e.g., pilot community testing, Community Tree gamification, offline-first positioning). The free tier uses local storage (sqflite) and P2P sync (nearby_connections) to avoid Firebase costs, with minimal internet usage for authentication.
+User Types (Recap for Context)
+Full Subscribers: Community Cooking, drinking water, room rent, utilities.
+Community Cooking and Drinking Water Only (Non-Residents): Meals and water, no rent.
+Community Cooking and Room Rent (No Drinking Water): Meals, rent, utilities.
+Room Rent Only: Rent and utilities.
+Investment-Focused Roommates: Subset of residents investing for passive income.
+Guests (Owner-Admin Managed): Fixed payment for room + meals, no bill splitting.
+Admin Roles
+Owner-Admin: Manages 3+ apartments (or 1-2 if set in settings), typically excludes self from bill splitting, pays for employees (e.g., cooks), and optimizes vacancies.
+Roommate-Admin: Manages 1-4 apartments, shares bills, and focuses on apartment-level coordination.
+Free Features for All Users (Users, Roommate-Admins, Owner-Admins)
+General Features
+Offline Operation and P2P Sync:
+Sync bills, tasks, votes, and user data across 100-200+ devices using Wi-Fi P2P (nearby_connections).
+Store data locally (sqflite) for offline access; sync via QR code or Bluetooth for initial connections.
+Support multiple Wi-Fi networks (Owner-Admins: building-wide; Roommate-Admins: one apartment).
+Conflict resolution with timestamps and last-writer-wins logic for reliable sync.
+Local Backups:
+Export data (users, bills, tasks) as JSON to admin’s phone, stored in device storage.
+Import JSON backups to restore data on new devices.
+Multi-Language Support:
+Use app in English, Arabic, or Hindi for accessibility.
+Gamification (Community Tree):
+Animated tree grows with contributions (bill payments, tasks, votes, grocery team efforts).
+Milestones: 10 tasks = fruit, first sync = flower, invite 5 users = rare tree skin.
+View personal contributions (Users, Roommate-Admins) or apartment/building progress (Owner-Admins).
+Shareable tree screenshot for viral engagement (e.g., “My Community Tree grew!”).
+Co-Living Credits:
+Earn credits for timely bill payments, task completion, voting, or grocery team savings.
+Redeem credits for in-app perks (e.g., priority voting, Community Cooking discounts).
+View credits on leaderboard (anonymous option).
+Minimal UI/UX:
+Card-based, symmetric layouts with green/blue gradients, large buttons, and one-tap actions.
+Nature-inspired theme (Roboto font, soft animations for tree growth).
+Psychological hooks: Progress bars (bills paid, vacancy filled), FOMO notifications (e.g., “Vote ends in 2 hours!”).
+Customizable Labels:
+Rename bills and services (e.g., “Community Cooking” suggested for meal costs) via text fields.
+Example: Rename “Electricity” to “Power Bill” or “Community Cooking” to “Shared Meals.”
+User-Specific Features
+Expense Tracking and Bill Payments:
+View personalized bill breakdown based on subscriptions (e.g., Community Cooking, rent, utilities).
+Receive local notifications for due dates (e.g., “Rent due in 3 days”).
+Mark bills as paid via in-app form (simulated, no payment gateway in free tier).
+See payment status (green for paid, red for unpaid).
+Opt-out of services (e.g., drinking water) with admin approval.
+Dynamic splitting: Recalculates when users join/leave (e.g., $8000 electricity, 25 users = $320 each).
+Community Cooking Participation:
+Subscribe to specific meals (breakfast, lunch, dinner) or all.
+View daily/weekly menu set by admin.
+Vote anonymously on menu changes, chef selection, or retention/demotion.
+Suggest menu items via polls.
+Receive meal schedule notifications (e.g., “Dinner at 7 PM”).
+Join grocery teams to buy Community Cooking supplies; track spending via manual entry.
+Choose fixed ($100/user) or variable (e.g., $120 this month) billing; excess spending credited as Co-Living Credits.
+Voting System:
+Vote on polls (e.g., menu, house rules, appliances) with anonymous option.
+View poll results and progress bars (e.g., “60% voted for Pizza”).
+Vote offline, syncing via P2P.
+Task Management:
+View assigned cleaning or cooking tasks (if no chef) on rotation schedule.
+Receive task notifications (e.g., “Clean kitchen tomorrow”).
+Mark tasks complete to earn Co-Living Credits.
+Investment Groups:
+Join apartment-specific groups to pool funds for passive income (e.g., dividend stocks).
+Track contributions and returns (e.g., “$50 invested, $2 monthly return”).
+View rent-free progress (e.g., “30% rent covered”).
+Chat within a group for strategy discussions.
+Community Collaboration:
+Propose collaborative investments (e.g., bulk groceries, appliances).
+Chat with roommates to coordinate tasks or grocery deals.
+View admin-recommended cost-effective shops.
+Notifications:
+Local alerts for bills, tasks, polls, and investment updates.
+Customize notification settings (e.g., disable non-critical alerts).
+Roommate-Admin-Specific Features
+User Management:
+Add/edit/remove users (residents or Community Cooking-only) in 1-2 apartments.
+Assign roles: User or Roommate-Admin.
+Set subscriptions: Community Cooking, drinking water, rent, utilities.
+Approve opt-out requests.
+Bill Management:
+Input apartment-specific bills (e.g., electricity, Community Cooking) with custom names.
+Configure fixed or variable Community Cooking billing.
+Enter grocery costs manually (no OCR in free tier).
+Split bills equally, including self (toggleable in settings).
+Track payment status (green/red).
+Recalculate splits when users join/leave.
+Vacancy Management:
+Add/edit/delete rooms and beds in 1-2 apartments.
+View apartment-specific vacancy dashboard (green for vacant, red for occupied).
+Export vacancy reports as JSON.
+Community Cooking Management:
+Set daily/weekly menu.
+Enable/disable chef; post chef details for voting or assign cooking tasks.
+Manage grocery teams and track spending.
+Approve menu change suggestions.
+Set meal schedules with notifications.
+Task Management:
+Set cleaning/cooking rotations for the apartment.
+Define rules (e.g., “No noise after 10 PM”) via polls or direct settings.
+Monitor task completion and award credits.
+Voting System:
+Create apartment-specific polls (e.g., “New couch?”).
+View vote results and participation rates.
+Settings:
+Toggle payment role (include/exclude from bill splitting).
+Configure one Wi-Fi network (SSID input).
+Customize bill/service names.
+Export/import local backups.
+
+
+Owner-Admin-Specific Features
+User Management:
+Add/edit/remove users across 3+ apartments (or 1-2 if set).
+Assign roles: User, Roommate-Admin, Owner-Admin.
+Set subscriptions and approve opt-outs.
+Add guests with fixed payments (e.g., “$500/month for room + meals”).
+Bill Management:
+Input building-wide or apartment-specific bills.
+Exclude self from splits (toggleable).
+Support apartment-based billing (e.g., “Apt 1: $2000/month”) for families/bachelors.
+Manage fixed/variable Community Cooking and grocery costs (manual entry).
+Track payment status and recalculate splits.
+Vacancy Management:
+Add/edit/delete apartments, rooms, beds.
+View building-wide vacancy dashboard with filters.
+Toggle room-based or apartment-based management.
+Export vacancy reports as JSON.
+Community Cooking Management:
+Set menus and manage chefs or cooking tasks across apartments.
+Handle guest-only Community Cooking (owner pays).
+Manage grocery teams and spending.
+Task Management:
+Set rotations and rules for multiple apartments.
+Assign employee tasks (e.g., cleaners).
+Voting System:
+Create building-wide or apartment-specific polls.
+View results and analytics.
+Settings:
+Toggle payment role and apartment count (3+ or 1-2).
+Configure multiple Wi-Fi networks.
+Customize labels and export backups.
+Success Booster Protocol Integration
+Pilot Community: Free tier supports 30-40 users (2-3 apartments), ideal for testing sync reliability and admin workflows.
+P2P Enhancements: Timestamps and last-writer-wins ensure robust sync for 200+ devices; QR code/Bluetooth for initial connections.
+Gamification: Community Tree and credits drive engagement; shareable screenshots create viral loops.
+Offline-First Positioning: Free tier emphasizes “Works offline, even with 200 roommates,” targeting student housing and hostels.
+
+
+Part 2: Paid Version Features and Monetization
+The paid tier targets Owner-Admins (managing large buildings) to cover costs (e.g., Firebase Storage, Messaging) and generate profit, while keeping the free tier robust for Roommate-Admins and users. I’ll include ads and micro-monetization loops to ensure early cash flow without financial trouble. Paid features are tied to Firebase or high-value services to justify costs, aligning with the Success Booster Protocol’s tier-based walling and micro-monetization.
+Paid Features
+Cloud Backups ($5/month):
+Backup data (users, bills, tasks) to Firebase Storage, accessible across devices.
+Restore backups on new devices or after data loss.
+Cost Justification: Covers Firebase Storage fees (~$0.02/GB).
+Advanced Analytics ($2/month):
+Detailed bill forecasting (e.g., “Electricity up 15% next month”).
+Vacancy trends (e.g., “Apt 2: 60% occupancy last 3 months”).
+Payment behavior (e.g., “80% users pay on time”).
+Investment ROI charts for groups.
+Cost Justification: Local ML computation, minimal Firebase Analytics usage.
+User Profile Photos and Documents ($5/month per apartment):
+Upload user photos, IDs, or contact details for tenant verification.
+Store lease agreements or utility bills.
+Cost Justification: Firebase Storage for uploads (~$0.02/GB).
+Public Vacancy Listings ($2/month):
+Generate shareable vacancy ads with photos (e.g., “Apt 1, Room 101: $400/month”).
+Share via WhatsApp, Instagram, or link.
+Cost Justification: Firebase Storage for photos.
+Push Notifications ($3/month):
+Firebase Cloud Messaging for real-time alerts (e.g., “Bill due,” “Vote ends”).
+Cost Justification: Covers Firebase Messaging fees (~$0.01/1000 notifications).
+AI Chore Scheduler ($0.99 for 3 months):
+AI-driven task rotations based on user availability (local ML).
+Cost Justification: One-time revenue, no server cost.
+Detailed Report Exports ($2 one-time):
+Export bill splits, vacancy reports, or poll results as PDF/CSV.
+Cost Justification: Local generation, minimal storage.
+Web Dashboard ($10/month, Owner-Admins only):
+Flutter Web/React dashboard for desktop management.
+Features: View apartments, export reports, upload photos, edit bills.
+Cost Justification: Firebase Hosting (~$0.10/GB) and Authentication.
+Ads
+Banner Ads (Free Tier):
+Display non-intrusive banner ads (Google AdMob) on Home, Bills, and Community Cooking pages.
+Ads for local services (e.g., grocery stores, utility providers) to align with app context.
+Revenue: ~$0.50-$2 per 1000 impressions, scalable with user growth.
+Cost Justification: Covers Firebase Authentication (~$0.05/1000 users).
+Ad Removal ($1/month):
+Option to remove ads for a smoother experience.
+Cost Justification: Direct revenue, no additional server cost.
+Sponsored Community Cooking Suggestions ($0.50 one-time):
+Promote local grocery deals in the Community Cooking page (e.g., “Buy rice at Store X, 10% off”).
+Revenue: Paid by local businesses, high relevance to users.
+Cost Justification: Minimal server cost, direct profit.
+Monetization Strategy
+Tiered Subscriptions:
+Basic ($5/month): Cloud backups, ad removal.
+Pro ($10/month): Basic + analytics, photos, listings.
+Enterprise ($20/month): Pro + web dashboard, push notifications.
+1-Month Free Trial: Encourages Owner-Admins to try premium features.
+Group Discounts: 10% off for buildings with 10+ apartments.
+Micro-Monetization:
+One-time purchases (e.g., report exports, AI scheduler) for early cash flow.
+Low-cost options (e.g., ad removal, sponsored suggestions) appeal to Roommate-Admins.
+Revenue Projection:
+100 Owner-Admins at $10/month = $1000 MRR.
+1000 free users with ads = $500-$2000/month (AdMob).
+50 micro-transactions at $1-$2 = $50-$100/month.
+Total: $1550-$3100 MRR, covering Firebase costs (~$50-$100/month for 1000 users).
+Cost Management:
+Firebase free tier for authentication (100K users/month).
+Paid features (Storage, Messaging) offset by subscriptions.
+Ads cover initial costs, ensuring no upfront expenses.
+//We are only implementing the ziberlive part 1
+### Decision: Two Apps vs. One App
+After evaluating your requirements, **splitting into two apps** is the better approach for the following reasons:
+- **Simplicity and Focus**: Separate apps ensure a tailored UI/UX for Roommate-Admins (App 1, collaboration-focused) and property owners (App 2, management-focused), reducing complexity and improving user experience.
+- **Targeted Monetization**: App 1 uses ads (2 per sync, settings page) and micro-transactions (e.g., top-up with coins) to appeal to casual users, while App 2 targets premium subscriptions for owners, maximizing revenue.
+- **Scalability**: App 1 supports smaller groups (1-2 apartments, 10-50 users), while App 2 handles larger properties (3+ apartments/villas, 100-200+ users), optimizing performance.
+- **Development Efficiency**: Shared core modules (e.g., P2P sync, local storage) reduce development time, while separate UIs allow rapid iteration for each audience.
+
+A single app could work but risks feature bloat, confusing navigation, and slower development due to complex role-based logic. Two apps allow you to push App 1 to students/young professionals and App 2 to hostel/hotel owners, ensuring broad adoption and faster market entry.
+
+### App Overview
+- **App 1: Roommate Collaboration App**
+  - **Target Users**: Roommate-Admins (managing 1-2 apartments) and roommates (residents, Community Meals subscribers).
+  - **Purpose**: Foster collaboration through schedules (tasks, Community Meals), bill splitting, rules, voting, and investment groups.
+  - **Key Features**: Offline-first with P2P sync (no Firebase login), ads (2 per sync, settings page), Co-Living Coins for ad removal/storage, gamified Community Tree.
+  - **Monetization**: Ads (AdMob, 2 per sync), micro-transactions (e.g., $1 for cloud storage), coin top-ups.
+  - **Data Safety**: Data persists via local storage (sqflite) and P2P sync (nearby_connections); no data loss as long as users sync regularly.
+
+- **App 2: Property Management App**
+  - **Target Users**: Owner-Admins (hostel/hotel owners, property managers) managing apartments, villas, or flats with multiple rooms/beds.
+  - **Purpose**: Manage vacancies, bills, maintenance schedules (e.g., bulb replacement, cleaning), and optional Community Meals (owner-funded, guests pay).
+  - **Key Features**: Offline-first with P2P sync, Firebase login for premium features, advanced vacancy tools, maintenance schedules, no team rotations (owner-managed).
+  - **Monetization**: Premium subscriptions ($5-$20/month), ads (less frequent), Firebase-backed analytics/storage.
+  - **Data Safety**: Local storage and P2P sync for free tier; Firebase for premium backups/login.
+
+### Part 1: App 1 - Enhanced Free Version Features for Roommate-Admins and Roommates
+
+App 1 is designed for Roommate-Admins and roommates to collaborate in 1-2 apartments (10-50 users), emphasizing schedules (tasks, Community Meals), bill splitting, payment visibility, rules, and a perfected voting system. It’s offline-first, using P2P sync (nearby_connections) and local storage (sqflite) to avoid Firebase login. Ads (2 per sync, settings page) and Co-Living Coins ensure revenue, with data persisting as long as users sync. Enhancements make the app simple, addictive, and competitive.
+
+#### General Improvements
+1. **Simplified Onboarding**:
+   - **Feature**: A 3-step wizard configures apartment details, Wi-Fi SSID, and schedules (tasks, Community Meals) with templates (e.g., “Weekly Cleaning,” “Daily Meals”). Suggests “Community Meals” for meal costs.
+   - **Why**: Reduces setup time, aligning with your need for simplicity and speed.
+   - **Implementation**: Use `PageView` with `Form` widgets, store in sqflite.
+
+2. **Robust P2P Sync**:
+   - **Feature**: Sync users, bills, schedules, rules, and votes via nearby_connections. Show “Sync Status” (e.g., “Last synced: 1 min ago”) and trigger 2 banner ads per sync. Manual sync via QR code/Bluetooth.
+   - **Why**: Ensures data persistence without Firebase; ads per sync meet your monetization requirement.
+   - **Implementation**: Use `nearby_connections`, store sync logs in sqflite, show ads via `admob_flutter`.
+
+3. **Gamification with Co-Living Coins**:
+   - **Feature**: Community Tree grows with contributions (bills, tasks, votes); earn Co-Living Coins for actions (e.g., 5 coins for paying bills). Redeem coins for ad removal ($1 = 100 coins) or cloud storage ($4 = 400 coins). Shareable tree screenshot.
+   - **Why**: Coins and tree drive engagement; top-ups ensure revenue, meeting your monetization goal.
+   - **Implementation**: Use `AnimatedContainer` for tree, store coins in sqflite, sync via P2P.
+
+4. **Ad-Integrated Settings**:
+   - **Feature**: Display a banner ad on the Settings page; offer coin top-up (e.g., $1 for 100 coins) to skip ads for 24 hours or unlock storage.
+   - **Why**: Monetizes settings access, ensuring revenue from all users.
+   - **Implementation**: Use `admob_flutter` for ads, `InAppPurchase` for coin top-ups.
+
+#### Free Features for Roommate-Admins
+1. **User Management**:
+   - **Features**:
+     - Add/edit/remove users (residents, Community Meals-only) for 1-2 apartments.
+     - Assign roles (User, Roommate-Admin) and subscriptions (Community Meals, rent, utilities).
+     - Generate QR invites for onboarding.
+     - View payment status dashboard (e.g., “8/10 paid rent”) with green/red indicators; send nudges to unpaid users.
+   - **Why**: Meets your payment visibility requirement; QR simplifies onboarding.
+   - **UI/UX**: `ListView` with `CircleAvatar` for status, `qr_flutter` for invites, `ElevatedButton` for nudges.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+2. **Bill Management**:
+   - **Features**:
+     - Input bills (rent, electricity, Community Meals) with custom names (e.g., “Community Meals”).
+     - Use bill templates for recurring entries (e.g., “Internet: $1000/month”).
+     - Dynamic splitting (e.g., $5000 rent, 10 users = $500 each); include Roommate-Admin (toggleable).
+     - Track payments with green/red indicators; send automated nudges (e.g., “Rent due in 2 days”).
+     - Show bill history and split visuals (pie chart).
+   - **Why**: Clear payment tracking and nudges meet your requirements; visuals enhance clarity.
+   - **UI/UX**: `TabBar` (Current, History), `PieChart` (fl_chart), `ListTile` for status.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+3. **Schedule Management**:
+   - **Features**:
+     - Create weekly/monthly schedules for tasks (cleaning, cooking if no chef) and Community Meals (e.g., “Dinner: 7 PM”).
+     - Use templates (e.g., “Weekly Cleaning: Kitchen, Bathroom”) or drag-and-drop time slots.
+     - Assign users; notify assignees (e.g., “Clean kitchen: Monday, 6 PM”).
+     - Award Co-Living Coins for completion; track “Schedule Streaks” (e.g., “5 weeks on time”).
+   - **Why**: Meets your scheduling emphasis, ensuring fair coordination.
+   - **UI/UX**: `TableCalendar` for schedules, `Draggable` for slots, `Badge` for streaks.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+4. **Rule Management**:
+   - **Features**:
+     - Set rules (e.g., “No noise after 10 PM”) via polls or direct input; schedule rules (e.g., “Quiet hours: 10 PM-6 AM”).
+     - Monitor compliance via user reports; award coins for adherence.
+     - Notify users of new rules.
+   - **Why**: Meets your rule-setting requirement, fostering harmony.
+   - **UI/UX**: `TextField` for rules, `TableCalendar` for schedules, `ListView` for reports.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+5. **Voting System**:
+   - **Features**:
+     - Create quick polls from templates (e.g., “New menu: Pizza?”); support anonymous voting/comments.
+     - View live vote counts (e.g., “7/10 voted”) and archive past polls.
+     - Send FOMO alerts (e.g., “Poll closes in 1 hour!”).
+     - Sync votes offline with 2 ads per sync.
+   - **Why**: Perfected voting system meets your emphasis, ensuring engagement.
+   - **UI/UX**: `DropdownButton` for templates, `ProgressBar` for votes, `TextField` for comments.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`, `admob_flutter`.
+
+6. **Community Meals Management**:
+   - **Features**:
+     - Set daily/weekly menus with templates (e.g., “Standard: Pizza, Pasta”).
+     - Enable/disable chef; assign cooking tasks if no chef.
+     - Manage grocery teams; track spending (manual entry); choose fixed ($100/user) or variable billing.
+     - Notify users of meal schedules; award coins for team savings.
+   - **Why**: Enhances collaboration; scheduling simplifies planning.
+   - **UI/UX**: `TableCalendar` for menus, `ListView` for teams, `Switch` for chef toggle.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+7. **Investment Groups**:
+   - **Features**:
+     - Create groups for passive income (e.g., bulk groceries); schedule meetings.
+     - Track contributions/returns; show rent-free progress (e.g., “30% covered”).
+     - Propose micro-investments via chat; award coins for participation.
+   - **Why**: Fosters collaboration, aligning with your vision.
+   - **UI/UX**: `TableCalendar` for meetings, `ProgressBar` for rent-free, `TextField` for proposals.
+   - **Services**: sqflite, P2P sync.
+
+8. **Community Collaboration**:
+   - **Features**:
+     - Community Board for tips (e.g., “Store X: 20% off rice”) with upvotes.
+     - Event planner for apartment events (e.g., “Movie night”) with RSVP.
+     - Cache local deals (Google Places API) offline.
+   - **Why**: Boosts community, making the app stickier than Roomi.
+   - **UI/UX**: `ListView` for board, `Form` for events, `CachedNetworkImage` for deals.
+   - **Services**: sqflite, P2P sync.
+
+#### Free Features for Roommates
+- View bills, mark payments (simulated), see payment status (green/red).
+- Subscribe to Community Meals, vote on menus, join grocery teams.
+- View task/meal schedules, swap tasks, earn coins, provide feedback.
+- View rules, report violations, earn coins for compliance.
+- Vote on polls, comment anonymously, receive FOMO alerts (2 ads per sync).
+- Join investment groups, propose micro-investments, track rent-free progress.
+- Post to Community Board, RSVP to events, access cached deals.
+
+---
+
+### Part 2: App 2 - Enhanced Features for Owner-Admins (Paid and Free)
+
+App 2 targets hostel/hotel owners managing apartments, villas, or flats (3+ units, 100-200+ users), focusing on vacancy management, maintenance schedules (e.g., bulb replacement, cleaning), and optional Community Meals (owner-funded, guests pay). It offers offline-first functionality with P2P sync for the free tier, with Firebase login for premium features. Maintenance schedules replace team rotations, and owners take profits from Community Meals. Ads are less frequent to prioritize subscriptions.
+
+#### General Improvements
+1. **Tailored Onboarding**:
+   - **Feature**: Wizard configures apartments/villas/flats, rooms, beds, Wi-Fi SSIDs, and maintenance schedules (e.g., “Weekly Cleaning”). Suggests “Community Meals” for meal costs.
+   - **Why**: Simplifies setup for large properties, ensuring efficiency.
+   - **Implementation**: `PageView` with `Form` widgets, store in sqflite.
+
+2. **P2P Sync with Firebase Option**:
+   - **Feature**: Free tier uses P2P sync (nearby_connections) for vacancy, bills, and schedules; premium tier adds Firebase login for backups/analytics. One ad per sync (less intrusive).
+   - **Why**: Balances offline access with premium features; ads ensure revenue.
+   - **Implementation**: `nearby_connections` for free tier, Firebase Auth for premium, `admob_flutter` for ads.
+
+3. **Gamification**:
+   - **Feature**: Property Tree grows with vacancy reductions, bill payments, and maintenance completions. Earn Property Points for actions (e.g., 10 points for filling a bed).
+   - **Why**: Drives engagement for owners, replacing Co-Living Coins.
+   - **Implementation**: `AnimatedContainer` for tree, store points in sqflite, sync via P2P.
+
+#### Free Features for Owner-Admins
+1. **Vacancy Management**:
+   - **Features**:
+     - Add/edit apartments, villas, flats, rooms, beds (e.g., “Villa 1 > Room 101 > Bed 1”).
+     - View building-wide vacancy dashboard (green/red indicators); filter by unit.
+     - Generate text-based vacancy listings (e.g., “Room 101: $400/month”).
+     - Notify for prolonged vacancies (e.g., “Bed 1 vacant for 30 days”).
+   - **Why**: Meets your vacancy management requirement, optimizing occupancy.
+   - **UI/UX**: `ExpansionTile` for unit tree, `ListView` for dashboard, `url_launcher` for listings.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+2. **Bill Management**:
+   - **Features**:
+     - Input bills (rent, utilities, Community Meals) for units or per bed.
+     - Exclude self from splits (toggleable); support fixed guest payments (e.g., “$500/month”).
+     - Track payments with green/red indicators; send nudges.
+     - Show bill history and split visuals (pie chart).
+   - **Why**: Ensures clear payment tracking, meeting your requirement.
+   - **UI/UX**: `TabBar` (Current, History), `PieChart` (fl_chart), `ListTile` for status.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+3. **Maintenance Schedules**:
+   - **Features**:
+     - Create schedules for house chores (e.g., cleaning, bulb replacement, plumbing) with templates (e.g., “Weekly Maintenance”).
+     - Assign to employees (e.g., cleaners) or users (if no chef); notify assignees.
+     - Track completion with Property Points; monitor “Maintenance Streaks.”
+   - **Why**: Meets your maintenance scheduling requirement, replacing team rotations.
+   - **UI/UX**: `TableCalendar` for schedules, `ListView` for assignments, `Badge` for streaks.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`.
+
+4. **Community Meals Management (Optional)**:
+   - **Features**:
+     - Enable/disable Community Meals; owner funds meals, guests pay fixed fees (e.g., “$50/month for dinners”).
+     - Set menus with templates; notify users of schedules.
+     - Track profits (e.g., “$500 collected, $300 spent”).
+   - **Why**: Owner-funded model meets your profit requirement; optional to suit hostels.
+   - **UI/UX**: `TableCalendar` for menus, `ListView` for guest payments, `Card` for profits.
+   - **Services**: sqflite, P2P sync.
+
+5. **User Management**:
+   - **Features**:
+     - Add/edit/remove users (residents, guests) across units; assign subscriptions.
+     - Generate QR invites; view payment status dashboard.
+     - Add guests with fixed payments (no bill splitting).
+   - **Why**: Supports large-scale management; payment visibility meets your requirement.
+   - **UI/UX**: `ListView` with `CircleAvatar` for status, `qr_flutter` for invites.
+   - **Services**: sqflite, P2P sync.
+
+6. **Voting System**:
+   - **Features**:
+     - Create unit-specific polls (e.g., “New fridge for Villa 1?”); support anonymous voting/comments.
+     - View live vote counts and archive; send FOMO alerts (1 ad per sync).
+   - **Why**: Ensures engagement for large properties, aligning with your voting focus.
+   - **UI/UX**: `DropdownButton` for templates, `ProgressBar` for votes, `TextField` for comments.
+   - **Services**: sqflite, P2P sync, `flutter_local_notifications`, `admob_flutter`.
+
+#### Paid Features for Owner-Admins
+1. **Firebase Login and Cloud Backups ($5/month)**:
+   - Login via Firebase Auth; backup data to Firebase Storage; schedule backups; restore across devices.
+   - **UI/UX**: `TextField` for login, `DropdownButton` for scheduling.
+   - **Services**: Firebase Auth, Firebase Storage.
+
+2. **Advanced Analytics ($3/month)**:
+   - Analyze vacancy trends, payment compliance, maintenance efficiency; suggest actions (e.g., “Reduce Villa 1 rent by 5%”).
+   - **UI/UX**: `LineChart` for trends, `Card` for suggestions.
+   - **Services**: Local ML, Firebase Analytics.
+
+3. **Photo/Document Uploads ($5/month per unit)**:
+   - Upload user photos, IDs, bills; add verification badges; use OCR for scanning.
+   - **UI/UX**: `CircleAvatar` for badges, `ImagePicker` with OCR.
+   - **Services**: Firebase Storage, Google ML Kit.
+
+4. **Public Vacancy Listings ($2/month)**:
+   - Generate photo-based listings; share via WhatsApp; track views.
+   - **UI/UX**: `DropdownButton` for templates, `url_launcher` for sharing.
+   - **Services**: Firebase Storage, Firebase Analytics.
+
+5. **Push Notifications ($3/month)**:
+   - Real-time alerts for bills, maintenance, votes; prioritize urgent alerts.
+   - **UI/UX**: `Switch` for priority, `BarChart` for analytics.
+   - **Services**: Firebase Cloud Messaging.
+
+6. **Web Dashboard ($15/month)**:
+   - Desktop management with real-time vacancy/payment updates; bulk uploads.
+   - **UI/UX**: `DataTable` for monitor, `FilePicker` for uploads.
+   - **Services**: Firebase Hosting, Firebase Firestore.
+
+#### Monetization Strategy for App 2
+- **Subscriptions**:
+  - Basic ($5/month): Backups, ad removal.
+  - Pro ($12/month): Basic + analytics, photos, listings.
+  - Enterprise ($20/month): Pro + web dashboard, push notifications.
+  - 7-day trial; 10% annual discount.
+  - **Revenue**: 100 Pro = $1200 MRR; 50 Enterprise = $1000 MRR.
+- **Ads**:
+  - Banner ads (1 per sync, settings page); sponsored maintenance deals (e.g., “Buy bulbs at Store X”).
+  - **Revenue**: 1000 users = $500-$1000/month.
+- **Cost Management**:
+  - Free tier: Firebase free tier (100K auth, 50K Firestore reads); P2P reduces costs.
+  - Paid tier: Storage ($0.02/GB), Messaging ($0.01/1000) covered by subscriptions.
+
+#### Revenue Projection
+- **App 1**: 200 Basic ($4) + 100 Pro ($8) = $1600 MRR; 300 micro-transactions = $300-$900; 1000 users with ads = $1000-$2000; Total: $2900-$4500 MRR.
+- **App 2**: 100 Pro ($12) + 50 Enterprise ($20) = $2200 MRR; 1000 users with ads = $500-$1000; Total: $2700-$3200 MRR.
+- **Combined**: $5600-$7700 MRR, covering Firebase costs ($100-$200).
+
+---
+
+### UI/UX Foundation
+Both apps use a nature-inspired palette (green #4CAF50, blue #2196F3) with card-based, minimal layouts and soft animations. App 1 emphasizes collaboration (schedules, voting), while App 2 focuses on management (vacancy, maintenance).
+
+- **App 1 (Roommate Collaboration)**:
+  - **Home Page**: Grid of cards (Bills, Schedules, Votes) with Community Tree and Roommate Score.
+  - **Schedules Page**: Tabs (Tasks, Community Meals) with `TableCalendar` and drag-and-drop slots.
+  - **Bills Page**: Tabs (Current, History) with `PieChart` and payment status (green/red).
+  - **Rules Page**: `ListView` for rules, `TableCalendar` for schedules, `Form` for reports.
+  - **Voting Page**: `ListView` for polls, `ProgressBar` for votes, `TextField` for comments.
+  - **Ads**: 2 banners per sync, 1 on settings; coin top-up option.
+
+- **App 2 (Property Management)**:
+  - **Home Page**: Dashboard with vacancy, payment, and maintenance stats; Property Tree.
+  - **Vacancy Page**: `ExpansionTile` for units/rooms/beds, `ListView` for dashboard.
+  - **Maintenance Page**: `TableCalendar` for schedules, `ListView` for employee assignments.
+  - **Bills Page**: Tabs (Unit, Guest) with `PieChart` for splits, payment status.
+  - **Ads**: 1 banner per sync, settings page; less intrusive.
+
+---
+
+### Updated File Structure
+The structure supports both apps with shared core modules and separate feature sets.
+
+
+co_living_apps/
+├── shared_core/
+│   ├── models/
+│   │   ├── user.dart             # User data
+│   │   ├── bill.dart             # Bill data
+│   │   ├── schedule.dart         # Task/meal/maintenance schedules
+│   │   ├── rule.dart            # Rule data (App 1)
+│   │   ├── poll.dart            # Poll data
+│   │   ├── investment.dart      # Investment group data (App 1)
+│   │   ├── gamification.dart     # Community Tree, Coins, Property Points
+│   ├── services/
+│   │   ├── p2p_service.dart      # Nearby Connections
+│   │   ├── local_storage.dart    # sqflite
+│   │   ├── firebase_service.dart # Firebase (App 2 premium)
+│   │   ├── notification_service.dart # Local/push notifications
+│   │   ├── ad_service.dart       # AdMob for ads
+│   ├── utils/
+│   │   ├── constants.dart        # Colors, API keys
+│   │   ├── validators.dart       # Form validation
+│   │   ├── sync_conflict.dart    # P2P conflict resolution
+├── app1_roommate/
+│   ├── features/
+│   │   ├── home/
+│   │   │   ├── home_page.dart        # Roommate Score, Community Tree
+│   │   │   ├── widgets/
+│   │   │   │   ├── stats_card.dart   # Bills, schedules, votes
+│   │   │   │   ├── tree_widget.dart  # Animated tree
+│   │   ├── users/
+│   │   │   ├── users_page.dart       # User management, payment status
+│   │   │   ├── widgets/
+│   │   │   │   ├── user_list.dart    # Green/red indicators
+│   │   │   │   ├── qr_invite.dart    # QR invites
+│   │   ├── bills/
+│   │   │   ├── bills_page.dart       # Bill splits, history
+│   │   │   ├── widgets/
+│   │   │   │   ├── bill_form.dart    # Templates
+│   │   │   │   ├── split_chart.dart  # Pie chart
+│   │   ├── schedules/
+│   │   │   ├── schedules_page.dart   # Task/Community Meals schedules
+│   │   │   ├── widgets/
+│   │   │   │   ├── schedule_calendar.dart # Calendar view
+│   │   │   │   ├── drag_slot.dart    # Drag-and-drop
+│   │   ├── rules/
+│   │   │   ├── rules_page.dart       # Rule creation, reports
+│   │   │   ├── widgets/
+│   │   │   │   ├── rule_form.dart    # Rule input
+│   │   │   │   ├── report_list.dart  # Violation reports
+│   │   ├── voting/
+│   │   │   ├── voting_page.dart      # Polls, comments
+│   │   │   ├── widgets/
+│   │   │   │   ├── poll_form.dart    # Quick polls
+│   │   │   │   ├── vote_progress.dart # Live votes
+│   │   ├── community_meals/
+│   │   │   ├── meals_page.dart       # Menus, teams
+│   │   │   ├── widgets/
+│   │   │   │   ├── menu_calendar.dart # Menu scheduler
+│   │   │   │   ├── team_rotation.dart # Grocery teams
+│   │   ├── investment/
+│   │   │   ├── investment_page.dart  # Groups, meetings
+│   │   │   ├── widgets/
+│   │   │   │   ├── group_list.dart   # Investment groups
+│   │   │   │   ├── progress_bar.dart # Rent-free progress
+│   │   ├── collaboration/
+│   │   │   ├── collaboration_page.dart # Board, events
+│   │   │   ├── widgets/
+│   │   │   │   ├── community_board.dart # Tips with upvotes
+│   │   │   │   ├── event_form.dart   # Event planner
+│   │   ├── settings/
+│   │   │   ├── settings_page.dart    # Coin top-ups, ad removal
+│   │   │   ├── widgets/
+│   │   │   │   ├── coin_topup.dart   # Coin purchase
+│   │   │   │   ├── language_selector.dart # Language dropdown
+│   ├── main.dart                     # App 1 entry point
+├── app2_property/
+│   ├── features/
+│   │   ├── home/
+│   │   │   ├── home_page.dart        # Vacancy, payment stats, Property Tree
+│   │   │   ├── widgets/
+│   │   │   │   ├── stats_card.dart   # Vacancy, maintenance
+│   │   │   │   ├── tree_widget.dart  # Animated tree
+│   │   ├── vacancy/
+│   │   │   ├── vacancy_page.dart     # Unit/room/bed management
+│   │   │   ├── widgets/
+│   │   │   │   ├── unit_tree.dart    # ExpansionTile for units
+│   │   │   │   ├── vacancy_dashboard.dart # Green/red indicators
+│   │   ├── bills/
+│   │   │   ├── bills_page.dart       # Unit/guest bills
+│   │   │   ├── widgets/
+│   │   │   │   ├── bill_form.dart    # Bill input
+│   │   │   │   ├── split_chart.dart  # Pie chart
+│   │   ├── maintenance/
+│   │   │   ├── maintenance_page.dart # Maintenance schedules
+│   │   │   ├── widgets/
+│   │   │   │   ├── schedule_calendar.dart # Calendar view
+│   │   │   │   ├── employee_list.dart # Employee assignments
+│   │   ├── community_meals/
+│   │   │   ├── meals_page.dart       # Optional meals, guest payments
+│   │   │   ├── widgets/
+│   │   │   │   ├── menu_calendar.dart # Menu scheduler
+│   │   │   │   ├── profit_card.dart  # Profit tracking
+│   │   ├── users/
+│   │   │   ├── users_page.dart       # User/guest management
+│   │   │   ├── widgets/
+│   │   │   │   ├── user_list.dart    # Payment status
+│   │   │   │   ├── qr_invite.dart    # QR invites
+│   │   ├── voting/
+│   │   │   ├── voting_page.dart      # Unit-specific polls
+│   │   │   ├── widgets/
+│   │   │   │   ├── poll_form.dart    # Poll templates
+│   │   │   │   ├── vote_progress.dart # Live votes
+│   │   ├── settings/
+│   │   │   ├── settings_page.dart    # Firebase login, backups
+│   │   │   ├── widgets/
+│   │   │   │   ├── login_form.dart   # Firebase login
+│   │   │   │   ├── backup_form.dart  # Backup scheduler
+│   ├── main.dart                     # App 2 entry point
+├── assets/
+│   ├── images/                       # Icons, tree animations
+│   ├── fonts/                        # Roboto font
+├── pubspec.yaml                     # Shared dependencies (flutter_local_notifications, sqflite, nearby_connections, firebase, fl_chart, qr_flutter, admob_flutter, url_launcher)
+
+
+---
+
+### Final Thoughts
+Splitting into App 1 (Roommate Collaboration) and App 2 (Property Management) ensures simplicity, efficiency, and targeted monetization, aligning with your vision to push to diverse users. App 1 fosters collaboration with schedules, voting, and Community Meals, monetizing via ads (2 per sync, settings) and coin top-ups, with no data loss via P2P sync. App 2 empowers owners to manage vacancies, maintenance, and optional Community Meals, with premium Firebase features and fewer ads. Both apps are offline-first, scalable, and addictive, outshining competitors with robust schedules, voting, and gamification.
