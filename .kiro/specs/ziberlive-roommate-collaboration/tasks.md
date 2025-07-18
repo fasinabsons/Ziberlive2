@@ -153,25 +153,25 @@
 
 ## 7. Voting and Decision Making
 
-- [ ] 7.1 Build poll creation and management system
+- [x] 7.1 Build poll creation and management system
   - Create poll creation with templates (e.g., "New menu: Pizza?")
   - Implement anonymous and named voting options
   - Add poll deadline and scheduling
   - _Requirements: 6.1, 6.3_
 
-- [ ] 7.2 Implement voting interface and live updates
+- [x] 7.2 Implement voting interface and live updates
   - Create voting UI with live vote counts
   - Display progress visualization (e.g., "7/10 voted")
   - Add FOMO alerts for poll deadlines
   - _Requirements: 6.2, 6.3_
 
-- [ ] 7.3 Add offline voting and sync integration
+- [x] 7.3 Add offline voting and sync integration
   - Implement offline vote storage
   - Sync votes with 2 ads per sync operation
   - Handle vote conflict resolution
   - _Requirements: 6.4_
 
-- [ ] 7.4 Create poll results and comment system
+- [x] 7.4 Create poll results and comment system
   - Build poll archival and results display
   - Implement anonymous commenting on polls
   - Add poll outcome notifications
