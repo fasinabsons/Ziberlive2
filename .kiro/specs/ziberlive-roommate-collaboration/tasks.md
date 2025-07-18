@@ -127,25 +127,25 @@
 
 ## 6. Task Management and Scheduling
 
-- [ ] 6.1 Build task creation and assignment system
+- [x] 6.1 Build task creation and assignment system
   - Create task creation form with details and deadlines
   - Implement task assignment to users
   - Add task notification system
   - _Requirements: 5.2_
 
-- [ ] 6.2 Implement schedule management with rotation
+- [x] 6.2 Implement schedule management with rotation
   - Create weekly/monthly schedule templates
   - Build drag-and-drop time slot interface
   - Add automatic task rotation system
   - _Requirements: 5.1, 5.4_
 
-- [ ] 6.3 Add task completion and credit system
+- [x] 6.3 Add task completion and credit system
   - Implement task completion workflow
   - Award Co-Living Credits for completed tasks
   - Track completion streaks and statistics
   - _Requirements: 5.3_
 
-- [ ] 6.4 Create task swapping and calendar view
+- [x] 6.4 Create task swapping and calendar view
   - Build task swapping system with approval
   - Implement calendar view for task schedules
   - Add task template system for common tasks
