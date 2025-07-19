@@ -3,6 +3,7 @@ import '../../pages/splash/splash_page.dart';
 import '../../pages/home/home_page.dart';
 import '../../pages/auth/login_page.dart';
 import '../../pages/demo/demo_page.dart';
+import '../../pages/rewards/lucky_draw_page.dart';
 // Temporarily commented out problematic imports
 // import '../../pages/rules/rule_violation_reporting_page.dart';
 // import '../../pages/rules/rule_compliance_page.dart';
@@ -31,6 +32,7 @@ class AppRouter {
   static const String ruleDisputes = '/rule-disputes';
   static const String bluetoothChat = '/bluetooth-chat';
   static const String rewardCoins = '/reward-coins';
+  static const String luckyDraw = '/lucky-draw';
   static const String credits = '/credits';
   static const String communityTree = '/community-tree';
   static const String achievements = '/achievements';
@@ -49,6 +51,9 @@ class AppRouter {
       case ruleDisputes:
       case bluetoothChat:
       case rewardCoins:
+        return MaterialPageRoute(builder: (_) => const DemoPage());
+      case luckyDraw:
+        return MaterialPageRoute(builder: (_) => const LuckyDrawPage());
       case credits:
       case communityTree:
       case achievements:

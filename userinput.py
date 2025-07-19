@@ -1,0 +1,2 @@
+user_input = input("Working on lucky draw system (task 12.2). Found some compilation issues to fix. Should I continue fixing these and complete task 12.2? (y/n): ")
+print(f"User input received: {user_input}") 

@@ -97,6 +97,20 @@ class DashboardTab extends StatelessWidget {
             // Sync Status Widget
             const SyncStatusWidget(showDetails: true),
             const SizedBox(height: 16),
+            
+            // Lucky Draw Card
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.emoji_events, color: Colors.amber),
+                title: Text('Lucky Draws & Rewards'),
+                subtitle: Text('Purchase tickets and win prizes!'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.pushNamed(context, '/lucky-draw');
+                },
+              ),
+            ),
+            const SizedBox(height: 16),
             Card(
               child: Padding(
                 padding: EdgeInsets.all(16.0),
