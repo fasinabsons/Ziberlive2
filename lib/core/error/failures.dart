@@ -117,3 +117,11 @@ class EncryptionFailure extends Failure {
     super.code,
   });
 }
+
+// Server Failures
+class ServerFailure extends Failure {
+  const ServerFailure({
+    required super.message,
+    super.code,
+  });
+}

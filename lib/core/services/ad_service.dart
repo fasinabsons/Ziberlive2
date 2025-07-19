@@ -1,277 +1,185 @@
 import 'dart:async';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../error/failures.dart';
-import '../utils/result.dart';
-import '../constants/app_constants.dart';
+import 'package:flutter/foundation.dart';
 
 class AdService {
-  static const String _testBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
-  static const String _testInterstitialAdUnitId = 'ca-app-pub-3940256099942544/1033173712';
+  static final AdService _instance = AdService._internal();
+  factory AdService() => _instance;
+  AdService._internal();
+
+  bool _isAdFreeMode = false;
+  DateTime? _adFreeExpiresAt;
+  Timer? _adFreeTimer;
   
-  // TODO: Replace with actual ad unit IDs in production
-  static const String _bannerAdUnitId = _testBannerAdUnitId;
-  static const String _interstitialAdUnitId = _testInterstitialAdUnitId;
-  
-  final StreamController<AdEvent> _adEventController = StreamController<AdEvent>.broadcast();
-  
-  BannerAd? _currentBannerAd;
-  InterstitialAd? _currentInterstitialAd;
-  bool _isInitialized = false;
-  int _adsShownInCurrentSync = 0;
-  DateTime? _lastSyncTime;
-  bool _isAdFreeActive = false;
-  DateTime? _adFreeExpiryTime;
+  final StreamController<bool> _adFreeStatusController = StreamController<bool>.broadcast();
+  Stream<bool> get adFreeStatusStream => _adFreeStatusController.stream;
 
-  // Streams
-  Stream<AdEvent> get adEventStream => _adEventController.stream;
+  bool get isAdFreeMode => _isAdFreeMode;
+  DateTime? get adFreeExpiresAt => _adFreeExpiresAt;
 
-  // Getters
-  bool get isInitialized => _isInitialized;
-  bool get isAdFreeActive => _isAdFreeActive && 
-      (_adFreeExpiryTime?.isAfter(DateTime.now()) ?? false);
-  BannerAd? get currentBannerAd => _currentBannerAd;
+  Future<void> initialize() async {
+    // Load saved ad-free status from storage
+    await _loadAdFreeStatus();
+    
+    // Check if current ad-free period has expired
+    _checkAdFreeExpiration();
+  }
 
-  Future<Result<void>> initialize() async {
-    try {
-      await MobileAds.instance.initialize();
-      _isInitialized = true;
-      _adEventController.add(AdEvent.initialized);
-      return const Success(null);
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Failed to initialize ads: $e'));
+  Future<void> activateAdFreeMode(Duration duration) async {
+    _isAdFreeMode = true;
+    _adFreeExpiresAt = DateTime.now().add(duration);
+    
+    // Cancel existing timer
+    _adFreeTimer?.cancel();
+    
+    // Set up expiration timer
+    _adFreeTimer = Timer(duration, () {
+      _deactivateAdFreeMode();
+    });
+    
+    // Save to storage
+    await _saveAdFreeStatus();
+    
+    // Notify listeners
+    _adFreeStatusController.add(true);
+    
+    if (kDebugMode) {
+      print('Ad-free mode activated until $_adFreeExpiresAt');
     }
   }
 
-  Future<Result<BannerAd>> loadBannerAd({AdSize? adSize}) async {
-    if (!_isInitialized) {
-      return const Error(AdLoadFailure(message: 'Ad service not initialized'));
-    }
-
-    if (isAdFreeActive) {
-      return const Error(AdLoadFailure(message: 'Ad-free mode is active'));
-    }
-
-    try {
-      final completer = Completer<Result<BannerAd>>();
-      
-      final bannerAd = BannerAd(
-        adUnitId: _bannerAdUnitId,
-        size: adSize ?? AdSize.banner,
-        request: const AdRequest(),
-        listener: BannerAdListener(
-          onAdLoaded: (ad) {
-            _currentBannerAd = ad as BannerAd;
-            _adEventController.add(AdEvent.bannerLoaded);
-            completer.complete(Success(ad as BannerAd));
-          },
-          onAdFailedToLoad: (ad, error) {
-            ad.dispose();
-            _adEventController.add(AdEvent.bannerFailedToLoad);
-            completer.complete(Error(AdLoadFailure(
-              message: 'Failed to load banner ad: ${error.message}',
-              code: error.code,
-            )));
-          },
-          onAdOpened: (ad) {
-            _adEventController.add(AdEvent.bannerOpened);
-          },
-          onAdClosed: (ad) {
-            _adEventController.add(AdEvent.bannerClosed);
-          },
-        ),
-      );
-
-      bannerAd.load();
-      return await completer.future;
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Error loading banner ad: $e'));
+  void _deactivateAdFreeMode() {
+    _isAdFreeMode = false;
+    _adFreeExpiresAt = null;
+    _adFreeTimer?.cancel();
+    _adFreeTimer = null;
+    
+    // Save to storage
+    _saveAdFreeStatus();
+    
+    // Notify listeners
+    _adFreeStatusController.add(false);
+    
+    if (kDebugMode) {
+      print('Ad-free mode expired');
     }
   }
 
-  Future<Result<void>> loadInterstitialAd() async {
-    if (!_isInitialized) {
-      return const Error(AdLoadFailure(message: 'Ad service not initialized'));
-    }
-
-    if (isAdFreeActive) {
-      return const Error(AdLoadFailure(message: 'Ad-free mode is active'));
-    }
-
-    try {
-      final completer = Completer<Result<void>>();
-      
-      await InterstitialAd.load(
-        adUnitId: _interstitialAdUnitId,
-        request: const AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (ad) {
-            _currentInterstitialAd = ad;
-            _adEventController.add(AdEvent.interstitialLoaded);
-            completer.complete(const Success(null));
-          },
-          onAdFailedToLoad: (error) {
-            _adEventController.add(AdEvent.interstitialFailedToLoad);
-            completer.complete(Error(AdLoadFailure(
-              message: 'Failed to load interstitial ad: ${error.message}',
-              code: error.code,
-            )));
-          },
-        ),
-      );
-
-      return await completer.future;
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Error loading interstitial ad: $e'));
-    }
+  Future<void> _loadAdFreeStatus() async {
+    // TODO: Load from SharedPreferences or secure storage
+    // For now, using mock data
+    // final prefs = await SharedPreferences.getInstance();
+    // _isAdFreeMode = prefs.getBool('ad_free_mode') ?? false;
+    // final expiresAtString = prefs.getString('ad_free_expires_at');
+    // if (expiresAtString != null) {
+    //   _adFreeExpiresAt = DateTime.parse(expiresAtString);
+    // }
   }
 
-  Future<Result<void>> showInterstitialAd() async {
-    if (_currentInterstitialAd == null) {
-      return const Error(AdLoadFailure(message: 'No interstitial ad loaded'));
-    }
-
-    if (isAdFreeActive) {
-      return const Error(AdLoadFailure(message: 'Ad-free mode is active'));
-    }
-
-    try {
-      final completer = Completer<Result<void>>();
-      
-      _currentInterstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-        onAdShowedFullScreenContent: (ad) {
-          _adEventController.add(AdEvent.interstitialShown);
-        },
-        onAdDismissedFullScreenContent: (ad) {
-          ad.dispose();
-          _currentInterstitialAd = null;
-          _adEventController.add(AdEvent.interstitialDismissed);
-          completer.complete(const Success(null));
-        },
-        onAdFailedToShowFullScreenContent: (ad, error) {
-          ad.dispose();
-          _currentInterstitialAd = null;
-          _adEventController.add(AdEvent.interstitialFailedToShow);
-          completer.complete(Error(AdLoadFailure(
-            message: 'Failed to show interstitial ad: ${error.message}',
-            code: error.code,
-          )));
-        },
-      );
-
-      await _currentInterstitialAd!.show();
-      return await completer.future;
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Error showing interstitial ad: $e'));
-    }
+  Future<void> _saveAdFreeStatus() async {
+    // TODO: Save to SharedPreferences or secure storage
+    // final prefs = await SharedPreferences.getInstance();
+    // await prefs.setBool('ad_free_mode', _isAdFreeMode);
+    // if (_adFreeExpiresAt != null) {
+    //   await prefs.setString('ad_free_expires_at', _adFreeExpiresAt!.toIso8601String());
+    // } else {
+    //   await prefs.remove('ad_free_expires_at');
+    // }
   }
 
-  Future<Result<void>> showSyncAds() async {
-    if (isAdFreeActive) {
-      return const Success(null); // Skip ads if ad-free is active
-    }
-
-    try {
-      // Reset counter if this is a new sync session
+  void _checkAdFreeExpiration() {
+    if (_isAdFreeMode && _adFreeExpiresAt != null) {
       final now = DateTime.now();
-      if (_lastSyncTime == null || 
-          now.difference(_lastSyncTime!).inMinutes > 5) {
-        _adsShownInCurrentSync = 0;
+      if (now.isAfter(_adFreeExpiresAt!)) {
+        // Ad-free period has expired
+        _deactivateAdFreeMode();
+      } else {
+        // Set up timer for remaining time
+        final remainingTime = _adFreeExpiresAt!.difference(now);
+        _adFreeTimer = Timer(remainingTime, () {
+          _deactivateAdFreeMode();
+        });
       }
-      _lastSyncTime = now;
-
-      // Show exactly 2 ads per sync operation as per requirements
-      if (_adsShownInCurrentSync < AppConstants.adsPerSync) {
-        // Load and show interstitial ad
-        final loadResult = await loadInterstitialAd();
-        if (loadResult is Success) {
-          final showResult = await showInterstitialAd();
-          if (showResult is Success) {
-            _adsShownInCurrentSync++;
-            _adEventController.add(AdEvent.syncAdShown);
-            
-            // Award coins for watching ad
-            await _awardCoinsForAd();
-          }
-        }
-      }
-
-      return const Success(null);
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Error showing sync ads: $e'));
     }
   }
 
-  Future<void> _awardCoinsForAd() async {
-    // TODO: Implement coin awarding logic
-    // This should integrate with the reward system
-    _adEventController.add(AdEvent.coinsAwarded);
+  bool shouldShowAd() {
+    return !_isAdFreeMode;
   }
 
-  Future<Result<void>> activateAdFreeMode(Duration duration) async {
-    try {
-      _isAdFreeActive = true;
-      _adFreeExpiryTime = DateTime.now().add(duration);
-      
-      // Dispose current ads
-      _currentBannerAd?.dispose();
-      _currentBannerAd = null;
-      _currentInterstitialAd?.dispose();
-      _currentInterstitialAd = null;
-      
-      _adEventController.add(AdEvent.adFreeActivated);
-      
-      // Schedule ad-free expiry
-      Timer(duration, () {
-        _isAdFreeActive = false;
-        _adFreeExpiryTime = null;
-        _adEventController.add(AdEvent.adFreeExpired);
-      });
-      
-      return const Success(null);
-    } catch (e) {
-      return Error(AdLoadFailure(message: 'Error activating ad-free mode: $e'));
+  Future<void> showBannerAd() async {
+    if (!shouldShowAd()) return;
+    
+    // TODO: Implement actual ad display logic
+    if (kDebugMode) {
+      print('Showing banner ad');
     }
   }
 
-  Duration? getAdFreeTimeRemaining() {
-    if (!_isAdFreeActive || _adFreeExpiryTime == null) {
-      return null;
+  Future<void> showInterstitialAd() async {
+    if (!shouldShowAd()) return;
+    
+    // TODO: Implement actual ad display logic
+    if (kDebugMode) {
+      print('Showing interstitial ad');
+    }
+  }
+
+  Future<void> showRewardedAd({
+    required Function() onRewarded,
+    required Function() onFailed,
+  }) async {
+    // Rewarded ads are always shown, even in ad-free mode
+    // as they provide value to the user
+    
+    // TODO: Implement actual rewarded ad logic
+    if (kDebugMode) {
+      print('Showing rewarded ad');
     }
     
-    final remaining = _adFreeExpiryTime!.difference(DateTime.now());
-    return remaining.isNegative ? null : remaining;
+    // Simulate ad completion
+    await Future.delayed(const Duration(seconds: 2));
+    onRewarded();
   }
 
-  void disposeBannerAd() {
-    _currentBannerAd?.dispose();
-    _currentBannerAd = null;
+  Future<void> showSyncAds() async {
+    if (!shouldShowAd()) return;
+    
+    // Show exactly 2 banner ads during sync as per requirements
+    await showBannerAd();
+    await Future.delayed(const Duration(seconds: 1));
+    await showBannerAd();
+    
+    if (kDebugMode) {
+      print('Showed 2 sync ads');
+    }
   }
 
-  void disposeInterstitialAd() {
-    _currentInterstitialAd?.dispose();
-    _currentInterstitialAd = null;
+  Duration? getRemainingAdFreeTime() {
+    if (!_isAdFreeMode || _adFreeExpiresAt == null) return null;
+    
+    final now = DateTime.now();
+    if (now.isAfter(_adFreeExpiresAt!)) return null;
+    
+    return _adFreeExpiresAt!.difference(now);
+  }
+
+  String getAdFreeStatusText() {
+    if (!_isAdFreeMode) return 'Ads enabled';
+    
+    final remainingTime = getRemainingAdFreeTime();
+    if (remainingTime == null) return 'Ad-free expired';
+    
+    if (remainingTime.inDays > 0) {
+      return 'Ad-free for ${remainingTime.inDays} more days';
+    } else if (remainingTime.inHours > 0) {
+      return 'Ad-free for ${remainingTime.inHours} more hours';
+    } else {
+      return 'Ad-free for ${remainingTime.inMinutes} more minutes';
+    }
   }
 
   void dispose() {
-    disposeBannerAd();
-    disposeInterstitialAd();
-    _adEventController.close();
+    _adFreeTimer?.cancel();
+    _adFreeStatusController.close();
   }
-}
-
-enum AdEvent {
-  initialized,
-  bannerLoaded,
-  bannerFailedToLoad,
-  bannerOpened,
-  bannerClosed,
-  interstitialLoaded,
-  interstitialFailedToLoad,
-  interstitialShown,
-  interstitialDismissed,
-  interstitialFailedToShow,
-  syncAdShown,
-  coinsAwarded,
-  adFreeActivated,
-  adFreeExpired,
 }

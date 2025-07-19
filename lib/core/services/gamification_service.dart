@@ -1,11 +1,10 @@
-import 'package:dartz/dartz.dart';
 import '../../domain/entities/gamification.dart';
 import '../../domain/entities/task.dart';
 import '../error/failures.dart';
 import '../utils/result.dart';
 
 abstract class GamificationService {
-  Future<Either<Failure, CoLivingCredits>> awardCredits(
+  Future<Result<CoLivingCredits>> awardCredits(
     String userId,
     int credits,
     CreditReason reason, {
@@ -13,34 +12,34 @@ abstract class GamificationService {
     String? relatedEntityId,
   });
   
-  Future<Either<Failure, CoLivingCredits>> spendCredits(
+  Future<Result<CoLivingCredits>> spendCredits(
     String userId,
     int credits,
     String description,
   );
   
-  Future<Either<Failure, CoLivingCredits>> getUserCredits(String userId);
+  Future<Result<CoLivingCredits>> getUserCredits(String userId);
   
-  Future<Either<Failure, CompletionStreak>> updateStreak(
+  Future<Result<CompletionStreak>> updateStreak(
     String userId,
     String type,
     bool completed,
   );
   
-  Future<Either<Failure, List<CompletionStreak>>> getUserStreaks(String userId);
+  Future<Result<List<CompletionStreak>>> getUserStreaks(String userId);
   
-  Future<Either<Failure, List<UserAchievement>>> checkAchievements(String userId);
+  Future<Result<List<UserAchievement>>> checkAchievements(String userId);
   
-  Future<Either<Failure, GamificationStats>> getUserStats(String userId);
+  Future<Result<GamificationStats>> getUserStats(String userId);
   
-  Future<Either<Failure, List<Achievement>>> getAvailableAchievements();
+  Future<Result<List<Achievement>>> getAvailableAchievements();
 }
 
 class GamificationServiceImpl implements GamificationService {
   // This would typically use a repository, but for now we'll simulate the logic
   
   @override
-  Future<Either<Failure, CoLivingCredits>> awardCredits(
+  Future<Result<CoLivingCredits>> awardCredits(
     String userId,
     int credits,
     CreditReason reason, {
@@ -52,7 +51,7 @@ class GamificationServiceImpl implements GamificationService {
       final currentCredits = await getUserCredits(userId);
       
       return currentCredits.fold(
-        (failure) => Left(failure),
+        (failure) => Error(failure),
         (userCredits) async {
           // Create transaction
           final transaction = CreditTransaction(
@@ -85,16 +84,16 @@ class GamificationServiceImpl implements GamificationService {
           // Check for achievements
           await checkAchievements(userId);
           
-          return Right(updatedCredits);
+          return Success(updatedCredits);
         },
       );
     } catch (e) {
-      return Left(ServerFailure('Failed to award credits: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to award credits: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, CoLivingCredits>> spendCredits(
+  Future<Result<CoLivingCredits>> spendCredits(
     String userId,
     int credits,
     String description,
@@ -103,10 +102,10 @@ class GamificationServiceImpl implements GamificationService {
       final currentCredits = await getUserCredits(userId);
       
       return currentCredits.fold(
-        (failure) => Left(failure),
+        (failure) => Error(failure),
         (userCredits) async {
           if (userCredits.availableCredits < credits) {
-            return Left(ValidationFailure('Insufficient credits'));
+            return Error(ValidationFailure(field: 'credits', message: 'Insufficient credits'));
           }
           
           final transaction = CreditTransaction(
@@ -128,16 +127,16 @@ class GamificationServiceImpl implements GamificationService {
           
           await _saveCredits(updatedCredits);
           
-          return Right(updatedCredits);
+          return Success(updatedCredits);
         },
       );
     } catch (e) {
-      return Left(ServerFailure('Failed to spend credits: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to spend credits: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, CoLivingCredits>> getUserCredits(String userId) async {
+  Future<Result<CoLivingCredits>> getUserCredits(String userId) async {
     try {
       // TODO: Load from database
       // For now, return default credits
@@ -150,14 +149,14 @@ class GamificationServiceImpl implements GamificationService {
         lastUpdated: DateTime.now(),
       );
       
-      return Right(credits);
+      return Success(credits);
     } catch (e) {
-      return Left(ServerFailure('Failed to get user credits: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to get user credits: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, CompletionStreak>> updateStreak(
+  Future<Result<CompletionStreak>> updateStreak(
     String userId,
     String type,
     bool completed,
@@ -199,7 +198,7 @@ class GamificationServiceImpl implements GamificationService {
           );
         }
         
-        return Right(updatedStreak);
+        return Success(updatedStreak);
       } else {
         // Break the streak if it was active
         if (currentStreak.isActive) {
@@ -209,40 +208,40 @@ class GamificationServiceImpl implements GamificationService {
           );
           
           await _saveStreak(brokenStreak);
-          return Right(brokenStreak);
+          return Success(brokenStreak);
         }
         
-        return Right(currentStreak);
+        return Success(currentStreak);
       }
     } catch (e) {
-      return Left(ServerFailure('Failed to update streak: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to update streak: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, List<CompletionStreak>>> getUserStreaks(String userId) async {
+  Future<Result<List<CompletionStreak>>> getUserStreaks(String userId) async {
     try {
       // TODO: Load from database
       final streaks = <CompletionStreak>[];
-      return Right(streaks);
+      return Success(streaks);
     } catch (e) {
-      return Left(ServerFailure('Failed to get user streaks: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to get user streaks: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, List<UserAchievement>>> checkAchievements(String userId) async {
+  Future<Result<List<UserAchievement>>> checkAchievements(String userId) async {
     try {
       final stats = await getUserStats(userId);
       
       return stats.fold(
-        (failure) => Left(failure),
+        (failure) => Error(failure),
         (userStats) async {
           final newAchievements = <UserAchievement>[];
           final availableAchievements = await getAvailableAchievements();
           
           return availableAchievements.fold(
-            (failure) => Left(failure),
+            (failure) => Error(failure),
             (achievements) async {
               for (final achievement in achievements) {
                 final userAchievement = userStats.achievements.firstWhere(
@@ -282,18 +281,18 @@ class GamificationServiceImpl implements GamificationService {
                 }
               }
               
-              return Right(newAchievements);
+              return Success(newAchievements);
             },
           );
         },
       );
     } catch (e) {
-      return Left(ServerFailure('Failed to check achievements: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to check achievements: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, GamificationStats>> getUserStats(String userId) async {
+  Future<Result<GamificationStats>> getUserStats(String userId) async {
     try {
       // TODO: Load from database
       final stats = GamificationStats(
@@ -308,19 +307,19 @@ class GamificationServiceImpl implements GamificationService {
         lastUpdated: DateTime.now(),
       );
       
-      return Right(stats);
+      return Success(stats);
     } catch (e) {
-      return Left(ServerFailure('Failed to get user stats: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to get user stats: ${e.toString()}'));
     }
   }
   
   @override
-  Future<Either<Failure, List<Achievement>>> getAvailableAchievements() async {
+  Future<Result<List<Achievement>>> getAvailableAchievements() async {
     try {
       final achievements = _getSystemAchievements();
-      return Right(achievements);
+      return Success(achievements);
     } catch (e) {
-      return Left(ServerFailure('Failed to get achievements: ${e.toString()}'));
+      return Error(ServerFailure(message: 'Failed to get achievements: ${e.toString()}'));
     }
   }
   
@@ -342,6 +341,8 @@ class GamificationServiceImpl implements GamificationService {
         return 'Streak bonus awarded';
       case CreditReason.achievement:
         return 'Achievement unlocked';
+      case CreditReason.ruleCompliance:
+        return 'Rule compliance maintained';
     }
   }
   

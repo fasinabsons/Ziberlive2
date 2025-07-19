@@ -77,10 +77,3 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-  
-  fonts:
-    - family: ZiberFont
-      fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700

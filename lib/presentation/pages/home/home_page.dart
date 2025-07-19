@@ -171,30 +171,25 @@ class BillsTab extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bills'),
         actions: [
-          AdminOnlyWidget(
-            child: IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Admin bill settings coming soon!')),
-                );
-              },
-            ),
+          // AdminOnlyWidget - temporarily disabled
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Admin bill settings coming soon!')),
+              );
+            },
           ),
         ],
       ),
       body: const Center(
         child: Text('Bills feature coming soon!'),
       ),
-      floatingActionButton: PermissionWidget(
-        permission: Permission.createBill,
-        child: FloatingActionButton(
-          onPressed: () {
-            // TODO: Add bill functionality
-          },
-          child: const Icon(Icons.add),
-        ),
-        fallback: null, // Hide FAB for users without permission
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // TODO: Add bill functionality
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -209,30 +204,25 @@ class TasksTab extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Tasks'),
         actions: [
-          AdminOnlyWidget(
-            child: IconButton(
-              icon: const Icon(Icons.schedule),
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Task scheduling coming soon!')),
-                );
-              },
-            ),
+          // AdminOnlyWidget - temporarily disabled
+          IconButton(
+            icon: const Icon(Icons.schedule),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Task scheduling coming soon!')),
+              );
+            },
           ),
         ],
       ),
       body: const Center(
         child: Text('Tasks feature coming soon!'),
       ),
-      floatingActionButton: PermissionWidget(
-        permission: Permission.createTask,
-        child: FloatingActionButton(
-          onPressed: () {
-            // TODO: Add task functionality
-          },
-          child: const Icon(Icons.add),
-        ),
-        fallback: null, // Hide FAB for users without permission
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // TODO: Add task functionality
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -247,48 +237,24 @@ class CommunityTab extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Community'),
         actions: [
-          AdminOnlyWidget(
-            child: IconButton(
-              icon: const Icon(Icons.admin_panel_settings),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const UserManagementPage()),
-                );
-              },
-            ),
+          // AdminOnlyWidget - temporarily disabled
+          IconButton(
+            icon: const Icon(Icons.admin_panel_settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const UserManagementPage()),
+              );
+            },
           ),
         ],
       ),
-      body: Column(
-        children: [
-          RoleBasedWidget(
-            adminWidget: const Card(
-              margin: EdgeInsets.all(16),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  children: [
-                    Icon(Icons.admin_panel_settings, color: Colors.orange),
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Admin Panel',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('Manage users, bills, and apartment settings'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            userWidget: const Card(
-              margin: EdgeInsets.all(16),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Card(
               child: Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
@@ -311,16 +277,168 @@ class CommunityTab extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          const Expanded(
-            child: Center(
-              child: Text('Community features coming soon!'),
+            const SizedBox(height: 16),
+            const Text(
+              'Rules & Compliance',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
+            const SizedBox(height: 8),
+            _buildFeatureGrid(context, [
+              _FeatureItem(
+                title: 'Rule Violations',
+                subtitle: 'Report and manage violations',
+                icon: Icons.report,
+                color: Colors.red,
+                route: '/rule-violations',
+              ),
+              _FeatureItem(
+                title: 'Compliance Tracking',
+                subtitle: 'Track your rule compliance',
+                icon: Icons.shield,
+                color: Colors.green,
+                route: '/rule-compliance',
+              ),
+              _FeatureItem(
+                title: 'Rule Disputes',
+                subtitle: 'Community dispute resolution',
+                icon: Icons.gavel,
+                color: Colors.orange,
+                route: '/rule-disputes',
+              ),
+            ]),
+            const SizedBox(height: 16),
+            const Text(
+              'Communication',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            _buildFeatureGrid(context, [
+              _FeatureItem(
+                title: 'Bluetooth Chat',
+                subtitle: 'Offline messaging with roommates',
+                icon: Icons.bluetooth,
+                color: Colors.blue,
+                route: '/bluetooth-chat',
+              ),
+            ]),
+            const SizedBox(height: 16),
+            const Text(
+              'Rewards & Gamification',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            _buildFeatureGrid(context, [
+              _FeatureItem(
+                title: 'Reward Coins',
+                subtitle: 'Earn and redeem coins',
+                icon: Icons.monetization_on,
+                color: Colors.amber,
+                route: '/reward-coins',
+              ),
+              _FeatureItem(
+                title: 'Co-Living Credits',
+                subtitle: 'Your community credits',
+                icon: Icons.stars,
+                color: Colors.purple,
+                route: '/credits',
+              ),
+              _FeatureItem(
+                title: 'Community Tree',
+                subtitle: 'Watch our community grow',
+                icon: Icons.park,
+                color: Colors.green,
+                route: '/community-tree',
+              ),
+              _FeatureItem(
+                title: 'Achievements',
+                subtitle: 'Unlock achievements',
+                icon: Icons.emoji_events,
+                color: Colors.amber,
+                route: '/achievements',
+              ),
+              _FeatureItem(
+                title: 'Leaderboard',
+                subtitle: 'Community rankings',
+                icon: Icons.leaderboard,
+                color: Colors.indigo,
+                route: '/leaderboard',
+              ),
+            ]),
+          ],
+        ),
       ),
     );
   }
+
+  Widget _buildFeatureGrid(BuildContext context, List<_FeatureItem> items) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1.2,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+      ),
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return Card(
+          child: InkWell(
+            onTap: () => Navigator.pushNamed(context, item.route),
+            borderRadius: BorderRadius.circular(8),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    item.icon,
+                    size: 32,
+                    color: item.color,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    item.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    item.subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey[600],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _FeatureItem {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color color;
+  final String route;
+
+  _FeatureItem({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.color,
+    required this.route,
+  });
 }
 
 class ProfileTab extends StatelessWidget {

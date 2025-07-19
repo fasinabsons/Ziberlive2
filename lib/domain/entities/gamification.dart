@@ -7,7 +7,8 @@ enum CreditReason {
   communityParticipation,
   scheduleCompletion,
   streakBonus,
-  achievement
+  achievement,
+  ruleCompliance
 }
 
 enum AchievementType {
@@ -434,6 +435,89 @@ class GamificationStats extends Equatable {
           .map((a) => UserAchievement.fromJson(a))
           .toList(),
       lastUpdated: DateTime.parse(json['last_updated']),
+    );
+  }
+}
+// Community Tree related enums and classes
+enum TreeGrowthLevel {
+  seedling,
+  sapling,
+  youngTree,
+  matureTree,
+  ancientTree,
+  mysticalTree,
+}
+
+enum Season {
+  spring,
+  summer,
+  autumn,
+  winter,
+}
+
+enum ContributionType {
+  task,
+  bill,
+  vote,
+  investment,
+  community,
+}
+
+class CommunityContribution extends Equatable {
+  final String userName;
+  final int credits;
+  final ContributionType type;
+  final DateTime timestamp;
+
+  const CommunityContribution({
+    required this.userName,
+    required this.credits,
+    required this.type,
+    required this.timestamp,
+  });
+
+  @override
+  List<Object?> get props => [userName, credits, type, timestamp];
+}
+
+class CommunityTree extends Equatable {
+  final String apartmentId;
+  final TreeGrowthLevel level;
+  final int totalCredits;
+  final List<CommunityContribution> recentContributions;
+  final DateTime lastUpdated;
+  final Map<String, dynamic>? seasonalData;
+
+  const CommunityTree({
+    required this.apartmentId,
+    required this.level,
+    required this.totalCredits,
+    required this.recentContributions,
+    required this.lastUpdated,
+    this.seasonalData,
+  });
+
+  @override
+  List<Object?> get props => [
+    apartmentId, level, totalCredits, recentContributions, 
+    lastUpdated, seasonalData
+  ];
+
+  CommunityTree copyWith({
+    String? apartmentId,
+    TreeGrowthLevel? level,
+    int? totalCredits,
+    List<CommunityContribution>? recentContributions,
+    DateTime? lastUpdated,
+    Map<String, dynamic>? seasonalData,
+  }) {
+    return CommunityTree(
+      apartmentId: apartmentId ?? this.apartmentId,
+      level: level ?? this.level,
+      totalCredits: totalCredits ?? this.totalCredits,
+      recentContributions: recentContributions ?? this.recentContributions,
+      lastUpdated: lastUpdated ?? this.lastUpdated,
+      seasonalData: seasonalData ?? this.seasonalData,
     );
   }
 }

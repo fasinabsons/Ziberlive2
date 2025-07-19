@@ -13,6 +13,12 @@ import '../services/p2p_sync_service.dart';
 import '../services/bluetooth_messaging_service.dart';
 import '../services/data_sync_service.dart';
 import '../services/ad_service.dart';
+import '../services/gamification_service.dart';
+import '../services/rule_compliance_service.dart';
+import '../services/rule_notification_service.dart';
+import '../services/rule_dispute_service.dart';
+import '../services/offline_message_service.dart';
+import '../services/reward_coin_service.dart';
 import 'injection_container.config.dart';
 
 final getIt = GetIt.instance;
@@ -39,6 +45,20 @@ Future<void> configureDependencies() async {
   getIt.registerLazySingleton<P2PSyncService>(() => P2PSyncService());
   getIt.registerLazySingleton<BluetoothMessagingService>(() => BluetoothMessagingService());
   getIt.registerLazySingleton<AdService>(() => AdService());
+  getIt.registerLazySingleton<GamificationService>(() => GamificationServiceImpl());
+  getIt.registerLazySingleton<RuleComplianceService>(
+    () => RuleComplianceServiceImpl(getIt<GamificationService>()),
+  );
+  getIt.registerLazySingleton<RuleNotificationService>(() => RuleNotificationServiceImpl());
+  getIt.registerLazySingleton<RuleDisputeService>(
+    () => RuleDisputeServiceImpl(getIt<RuleNotificationService>()),
+  );
+  getIt.registerLazySingleton<OfflineMessageService>(
+    () => OfflineMessageServiceImpl(getIt<BluetoothMessagingService>()),
+  );
+  getIt.registerLazySingleton<RewardCoinService>(
+    () => RewardCoinServiceImpl(getIt<AdService>()),
+  );
   getIt.registerLazySingleton<DataSyncService>(
     () => DataSyncService(
       getIt<DatabaseHelper>(),
