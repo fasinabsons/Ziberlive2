@@ -138,6 +138,20 @@ class DashboardTab extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 8),
+            
+            // Premium Features Card
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.star, color: Colors.purple),
+                title: Text('Premium Features'),
+                subtitle: Text('Ad-free experience, cloud storage & more'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.pushNamed(context, '/monetization');
+                },
+              ),
+            ),
             const SizedBox(height: 16),
             Card(
               child: Padding(
