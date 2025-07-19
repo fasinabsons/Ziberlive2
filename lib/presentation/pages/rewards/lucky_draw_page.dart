@@ -133,6 +133,28 @@ class LuckyDrawPage extends StatelessWidget {
                       
                       const SizedBox(height: 24),
                       
+                      // Rewards Catalog Link
+                      Container(
+                        width: double.infinity,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/physical-rewards');
+                          },
+                          icon: const Icon(Icons.card_giftcard),
+                          label: const Text('View Rewards Catalog'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orange.shade600,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        ),
+                      ),
+                      
+                      const SizedBox(height: 24),
+                      
                       // Ticket Purchase Section
                       const Text(
                         'Purchase Lucky Draw Tickets',
