@@ -110,6 +110,34 @@ class DashboardTab extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 8),
+            
+            // Community Board Card
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.forum, color: Colors.green),
+                title: Text('Community Board'),
+                subtitle: Text('Share tips, events, and local deals'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.pushNamed(context, '/community-board');
+                },
+              ),
+            ),
+            const SizedBox(height: 8),
+            
+            // Bulk Purchase Card
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.shopping_cart, color: Colors.blue),
+                title: Text('Group Purchases'),
+                subtitle: Text('Coordinate bulk purchases and save money'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.pushNamed(context, '/bulk-purchase');
+                },
+              ),
+            ),
             const SizedBox(height: 16),
             Card(
               child: Padding(

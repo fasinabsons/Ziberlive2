@@ -1,2 +1,2 @@
-user_input = input("Working on lucky draw system (task 12.2). Found some compilation issues to fix. Should I continue fixing these and complete task 12.2? (y/n): ")
+user_input = input("✅ Completed Task 12 (Reward System and Lucky Draws)! Lucky draw system with tickets, ad-free experience, and physical rewards catalog is working. Ready to continue with Task 13 (Community Collaboration Features)? (y/n): ")
 print(f"User input received: {user_input}") 

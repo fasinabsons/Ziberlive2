@@ -5,6 +5,8 @@ import '../../pages/auth/login_page.dart';
 import '../../pages/demo/demo_page.dart';
 import '../../pages/rewards/lucky_draw_page.dart';
 import '../../pages/rewards/physical_rewards_page.dart';
+import '../../pages/community/community_board_page.dart';
+import '../../pages/community/bulk_purchase_page.dart';
 // Temporarily commented out problematic imports
 // import '../../pages/rules/rule_violation_reporting_page.dart';
 // import '../../pages/rules/rule_compliance_page.dart';
@@ -35,6 +37,8 @@ class AppRouter {
   static const String rewardCoins = '/reward-coins';
   static const String luckyDraw = '/lucky-draw';
   static const String physicalRewards = '/physical-rewards';
+  static const String communityBoard = '/community-board';
+  static const String bulkPurchase = '/bulk-purchase';
   static const String credits = '/credits';
   static const String communityTree = '/community-tree';
   static const String achievements = '/achievements';
@@ -58,6 +62,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const LuckyDrawPage());
       case physicalRewards:
         return MaterialPageRoute(builder: (_) => const PhysicalRewardsPage());
+      case communityBoard:
+        return MaterialPageRoute(builder: (_) => const CommunityBoardPage());
+      case bulkPurchase:
+        return MaterialPageRoute(builder: (_) => const BulkPurchasePage());
       case credits:
       case communityTree:
       case achievements:
